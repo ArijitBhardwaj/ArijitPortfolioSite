@@ -8,9 +8,28 @@ The portfolio is built as a full-stack application with a React frontend and Exp
 
 ## Recent Changes (October 30, 2025)
 
-**Latest Complete Redesign - Matching Reference Site (knowprabhjyot.github.io):**
+**Latest Image Integration Update:**
+- ✅ **Integrated user profile photos** - Personal photos now displayed throughout portfolio:
+  * Sidebar avatar: User-provided profile photo (linkin..myb_1761849483072.png) in circular frame with primary border
+  * Hero section: Outdoor professional photo (image_1761849584907.png) positioned top-right with left-aligned text
+  * Hero redesigned: Photo in top-right corner (128px mobile, 192px desktop) with "You Know I Got This!" text left-aligned
+- ✅ **Added stock images to all 10 portfolio projects** - Each project card now displays relevant imagery:
+  * Proactivly: AI chatbot business planning image
+  * Fursight: E-commerce content creation image
+  * AR Furniture Showcase: Augmented reality furniture placement image
+  * NaviGo: Indoor navigation wayfinding image
+  * Collaborative Notes: Real-time collaboration workspace image
+  * Virtual Reality Industrial Training: VR headset training simulation image
+  * OverRun Android Game: Mobile game runner gameplay image
+  * AR Business Card: AR business card technology image
+  * Posting App: Social media app mobile interface image
+  * Word Saber VR: VR education game learning image
+- ✅ **Updated project title** - "Virtual Reality - Training" renamed to "Virtual Reality Industrial Training"
+- ✅ **Enhanced portfolio card interactions** - Images scale on hover (transform: scale(1.05)) with smooth transitions
+- ✅ **Comprehensive E2E testing passed** - Verified all images display correctly on desktop and mobile
+
+**Previous Complete Redesign - Matching Reference Site (knowprabhjyot.github.io):**
 - ✅ **Further reduced hero section** - Now 45vh (down from 60vh) ensuring "My Skill Set" visible without scrolling
-  * Desktop avatar: 128px (w-32 h-32), Mobile: 96px (w-24 h-24)
   * Compact text sizing: heading text-2xl md:text-4xl, subtitle text-sm md:text-base
 - ✅ **Updated stats section** - Reduced to 3 cards with correct values:
   * Industry Experience: 4+ (updated from 5+)
