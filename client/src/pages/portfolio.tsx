@@ -105,10 +105,10 @@ export default function Portfolio() {
       githubUrl: "https://github.com/ArijitBhardwaj",
     },
     {
-      title: "Movie Explorer",
-      description: "Interactive movie database web application with async API fetching, responsive Bootstrap UI, and comprehensive movie information display.",
-      technologies: ["HTML", "CSS", "JavaScript", "Bootstrap", "TMDb API"],
-      githubUrl: "https://github.com/ArijitBhardwaj/Midterm_movieProject",
+      title: "Virtual Reality - Training",
+      description: "Immersive VR training simulation platform designed to provide hands-on learning experiences in virtual environments with interactive scenarios and real-time feedback.",
+      technologies: ["Unity", "C#", "VR SDK", "3D Modeling", "Oculus"],
+      githubUrl: "https://github.com/ArijitBhardwaj",
     },
   ];
 

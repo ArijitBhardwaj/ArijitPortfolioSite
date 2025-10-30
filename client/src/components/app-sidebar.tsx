@@ -65,22 +65,26 @@ export function AppSidebar() {
           <div className="w-full px-4 space-y-1 text-sm">
             <div className="flex justify-between">
               <span className="text-muted-foreground font-medium">Residence:</span>
-              <span className="text-sidebar-foreground">Vancouver, BC</span>
+              <span className="text-sidebar-foreground">Canada</span>
             </div>
             <div className="flex justify-between">
               <span className="text-muted-foreground font-medium">City:</span>
               <span className="text-sidebar-foreground">Vancouver, BC</span>
             </div>
+            <div className="flex justify-between">
+              <span className="text-muted-foreground font-medium">Age:</span>
+              <span className="text-sidebar-foreground">28 years</span>
+            </div>
           </div>
         </div>
       </SidebarHeader>
       
-      <SidebarContent>
+      <SidebarContent className="!overflow-visible">
         <SidebarGroup>
           <SidebarGroupLabel className="uppercase tracking-wide text-sm font-bold px-4 mb-4">
             Skills
           </SidebarGroupLabel>
-          <SidebarGroupContent className="max-h-[400px] overflow-y-auto px-4">
+          <SidebarGroupContent className="px-4">
             {skills.map((skill) => (
               <SkillBar key={skill.name} skill={skill.name} percentage={skill.percentage} />
             ))}
