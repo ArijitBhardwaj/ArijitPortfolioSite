@@ -2,16 +2,16 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ExternalLink, Github } from "lucide-react";
-import proactivlyImg from "@assets/stock_images/ai_chatbot_business__c93aff07.jpg";
-import fursightImg from "@assets/stock_images/e-commerce_content_c_446d709f.jpg";
-import arFurnitureImg from "@assets/stock_images/augmented_reality_fu_3f24afa8.jpg";
-import naviGoImg from "@assets/stock_images/indoor_navigation_bu_0b630662.jpg";
-import collaborativeNotesImg from "@assets/stock_images/real-time_collaborat_977f26d5.jpg";
-import vrTrainingImg from "@assets/stock_images/virtual_reality_trai_c6d3e500.jpg";
-import overrunGameImg from "@assets/stock_images/mobile_game_runner_a_3d7874c7.jpg";
-import arBusinessCardImg from "@assets/stock_images/augmented_reality_bu_f3d00550.jpg";
-import postingAppImg from "@assets/stock_images/social_media_app_mob_c31b711c.jpg";
-import wordSaberImg from "@assets/stock_images/vr_game_education_vi_9217b1cb.jpg";
+import proactivlyImg from "@assets/stock_images/ai_chatbot_assistant_4c4bcf7e.jpg";
+import fursightImg from "@assets/stock_images/e-commerce_online_sh_2188a8e9.jpg";
+import arFurnitureImg from "@assets/stock_images/augmented_reality_ar_ba8edd51.jpg";
+import naviGoImg from "@assets/stock_images/indoor_navigation_gp_b2c41418.jpg";
+import collaborativeNotesImg from "@assets/stock_images/collaboration_teamwo_62b6b743.jpg";
+import vrTrainingImg from "@assets/stock_images/virtual_reality_vr_h_b02ada41.jpg";
+import overrunGameImg from "@assets/stock_images/mobile_game_smartpho_fe1880b6.jpg";
+import arBusinessCardImg from "@assets/stock_images/augmented_reality_bu_72fa92f4.jpg";
+import postingAppImg from "@assets/stock_images/social_media_app_sma_6aa4cba3.jpg";
+import wordSaberImg from "@assets/stock_images/vr_virtual_reality_e_48e343e9.jpg";
 
 interface ProjectCardProps {
   title: string;

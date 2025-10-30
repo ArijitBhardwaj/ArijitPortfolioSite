@@ -2,7 +2,6 @@ import { MountainBackground } from "@/components/mountain-background";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Briefcase, FolderGit2, Users, GraduationCap } from "lucide-react";
-import heroPhoto from "@assets/image_1761849584907.png";
 
 interface StatCardProps {
   icon: React.ReactNode;
@@ -95,18 +94,8 @@ export default function Home() {
         <div className="absolute inset-0">
           <MountainBackground />
         </div>
-        <div className="absolute bottom-0 right-0 md:right-8 z-20 h-full">
-          <div className="h-full flex items-end">
-            <img 
-              src={heroPhoto} 
-              alt="Arijit Bhardwaj" 
-              className="h-full w-auto object-contain object-bottom"
-              style={{ maxHeight: '100%' }}
-            />
-          </div>
-        </div>
-        <div className="relative z-10 h-full flex items-center justify-start pl-8 md:pl-16">
-          <div className="text-left max-w-xl">
+        <div className="relative z-10 h-full flex items-center justify-center">
+          <div className="text-center max-w-xl px-4">
             <h1 className="text-2xl md:text-4xl font-bold mb-2 text-white drop-shadow-lg">
               You Know I Got This!
             </h1>
