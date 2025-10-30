@@ -8,6 +8,12 @@ The portfolio is built as a full-stack application with a React frontend and Exp
 
 ## Recent Changes (October 30, 2025)
 
+**Latest Updates:**
+- ✅ Replaced "Movie Explorer" with "Virtual Reality - Training" project in portfolio
+- ✅ Updated profile information: Residence "Canada", City "Vancouver, BC", Age "28 years"
+- ✅ Removed internal scrollbars from skills section - natural page scrolling enabled
+- ✅ All changes tested and verified on desktop and mobile
+
 **Major Redesign Completed** - Matching knowprabhjyot.github.io reference design:
 - ✅ Navigation tabs moved to horizontal header with golden-yellow border styling
 - ✅ Theme toggle relocated to top-right corner of main content area
@@ -25,6 +31,7 @@ The portfolio is built as a full-stack application with a React frontend and Exp
 - Responsive sidebar (256px desktop, collapsible on mobile)
 - Alternating timeline layout with center line on desktop
 - 2-column portfolio grid on desktop, single column on mobile
+- Clean skills section without internal scrollbars for better UX
 
 ## User Preferences
 
