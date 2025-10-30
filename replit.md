@@ -8,19 +8,23 @@ The portfolio is built as a full-stack application with a React frontend and Exp
 
 ## Recent Changes (October 30, 2025)
 
-**MVP Completed** - All core features implemented and tested:
-- ✅ Rebuilt sidebar using official shadcn sidebar primitives (SidebarProvider, Sidebar, SidebarMenu)
-- ✅ Fixed all duplicate data-testid issues by adding unique prefixes for skill and project technology badges
-- ✅ Comprehensive end-to-end testing passed (all pages, contact form, theme toggle, mobile responsiveness)
-- ✅ Contact form submission working with loading states and toast notifications
-- ✅ All pages (Home, About, Portfolio, Contact) fully functional
+**Major Redesign Completed** - Matching knowprabhjyot.github.io reference design:
+- ✅ Navigation tabs moved to horizontal header with golden-yellow border styling
+- ✅ Theme toggle relocated to top-right corner of main content area
+- ✅ Sidebar redesigned to contain only profile, skills bars, and social icons
+- ✅ Alternating left-right timeline on About page (desktop), stacked on mobile
+- ✅ Education entry updated to "Graduated 2020"
+- ✅ Portfolio 2-column grid with "Github URL" text links and "Preview" buttons
+- ✅ Fully responsive mobile experience with horizontal scrolling navigation
+- ✅ Comprehensive E2E testing passed for all features and breakpoints
 
 **Design Implementation:**
-- Dark/light theme toggle with golden-yellow accent color matching reference site
+- Dark/light theme toggle with golden-yellow accent color (HSL 45 95% 50%)
+- Horizontal navigation tabs at top with golden borders for active state
 - Poppins font for UI, JetBrains Mono for code/tech elements
-- Responsive sidebar (320px desktop, collapsible on mobile)
-- Professional timeline-based About page
-- Grid-based Portfolio showcase with 6 major projects
+- Responsive sidebar (256px desktop, collapsible on mobile)
+- Alternating timeline layout with center line on desktop
+- 2-column portfolio grid on desktop, single column on mobile
 
 ## User Preferences
 
