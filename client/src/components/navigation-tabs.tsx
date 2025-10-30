@@ -12,6 +12,7 @@ export function NavigationTabs() {
     { path: "/about", label: "ABOUT" },
     { path: "/portfolio", label: "PORTFOLIO" },
     { path: "/contact", label: "CONTACT" },
+    { path: "/resume", label: "RESUME" },
   ];
 
   return (

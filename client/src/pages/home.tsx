@@ -91,23 +91,23 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative w-full overflow-hidden" style={{ height: '60vh', maxHeight: '60vh' }}>
+      <section className="relative w-full overflow-hidden" style={{ height: '45vh', maxHeight: '45vh' }}>
         <div className="absolute inset-0">
           <MountainBackground />
         </div>
         <div className="relative z-10 h-full flex items-center justify-center">
-          <div className="text-center px-4 max-w-4xl mx-auto py-8">
-            <div className="mb-6">
-              <div className="w-28 h-28 md:w-36 md:h-36 mx-auto rounded-full overflow-hidden border-4 border-primary shadow-2xl flex-shrink-0">
-                <div className="w-full h-full bg-gradient-to-br from-primary/20 to-primary/40 flex items-center justify-center text-4xl md:text-5xl font-bold text-primary">
+          <div className="text-center px-4 max-w-4xl mx-auto py-6">
+            <div className="mb-4">
+              <div className="w-24 h-24 md:w-32 md:h-32 mx-auto rounded-full overflow-hidden border-4 border-primary shadow-2xl flex-shrink-0">
+                <div className="w-full h-full bg-gradient-to-br from-primary/20 to-primary/40 flex items-center justify-center text-3xl md:text-4xl font-bold text-primary">
                   AB
                 </div>
               </div>
             </div>
-            <h1 className="text-3xl md:text-5xl font-bold mb-3 text-white drop-shadow-lg">
+            <h1 className="text-2xl md:text-4xl font-bold mb-2 text-white drop-shadow-lg">
               You Know I Got This!
             </h1>
-            <p className="text-base md:text-lg text-white/90 drop-shadow-md">
+            <p className="text-sm md:text-base text-white/90 drop-shadow-md">
               Full Stack Developer | Problem Solver | Innovation Builder
             </p>
           </div>

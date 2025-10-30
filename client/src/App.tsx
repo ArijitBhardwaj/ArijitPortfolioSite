@@ -11,17 +11,23 @@ import Home from "@/pages/home";
 import About from "@/pages/about";
 import Portfolio from "@/pages/portfolio";
 import Contact from "@/pages/contact";
+import Resume from "@/pages/resume";
 import NotFound from "@/pages/not-found";
+import { ScrollToTop } from "@/components/scroll-to-top";
 
 function Router() {
   return (
-    <Switch>
-      <Route path="/" component={Home} />
-      <Route path="/about" component={About} />
-      <Route path="/portfolio" component={Portfolio} />
-      <Route path="/contact" component={Contact} />
-      <Route component={NotFound} />
-    </Switch>
+    <>
+      <Switch>
+        <Route path="/" component={Home} />
+        <Route path="/about" component={About} />
+        <Route path="/portfolio" component={Portfolio} />
+        <Route path="/contact" component={Contact} />
+        <Route path="/resume" component={Resume} />
+        <Route component={NotFound} />
+      </Switch>
+      <ScrollToTop />
+    </>
   );
 }
 

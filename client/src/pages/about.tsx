@@ -82,7 +82,7 @@ function AlternatingTimelineItem({ type, title, organization, location, period, 
 }
 
 export default function About() {
-  const hobbies = ["Coding", "Learning", "Travel", "Technology"];
+  const hobbies = ["Reading", "Researching", "Travel", "Binge Watch"];
 
   const timeline: TimelineItemProps[] = [
     {
@@ -171,39 +171,35 @@ export default function About() {
       </section>
 
       {/* About Me Section */}
-      <section className="py-16 px-4">
+      <section className="py-16 px-4 bg-background">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-semibold mb-6">About Me</h2>
-          <Card className="p-6 mb-8">
-            <h3 className="text-xl font-semibold mb-4">My Kind of Story</h3>
-            <div className="space-y-4 text-muted-foreground leading-relaxed">
-              <p>
-                Hello, my name is Arijit Bhardwaj and I am a Full Stack Developer. I love building scalable applications 
-                with modern web technologies and exploring new frontiers in XR and AI. The journey I've taken to get here 
-                has been one of continuous learning and growth.
-              </p>
-              <p>
-                One thing I have improved over time is not just technical skills, but also the ability to understand user needs 
-                and translate them into elegant solutions. I don't chase perfection without purpose—I chase meaningful impact. 
-                If I want to achieve something meaningful, I dedicate the time to explore, learn, and iterate. But that's what 
-                drives me in real life, right? Challenges excite me, staying stagnant frustrates me.
-              </p>
-            </div>
-          </Card>
-
+          <h2 className="text-3xl md:text-4xl font-bold mb-3">About Me</h2>
+          <p className="text-lg text-muted-foreground mb-8">My Kind of Story</p>
+          
           <div className="mb-8">
             <h3 className="text-xl font-semibold mb-4">My Hobbies</h3>
             <div className="flex flex-wrap gap-3">
               {hobbies.map((hobby) => (
-                <Badge
+                <Button
                   key={hobby}
-                  className="px-4 py-2 text-sm bg-primary/10 text-primary hover:bg-primary/20"
-                  data-testid={`badge-hobby-${hobby.toLowerCase()}`}
+                  variant="outline"
+                  className="rounded-full border-2 border-primary text-primary hover:bg-primary/10 px-6 py-2"
+                  data-testid={`badge-hobby-${hobby.toLowerCase().replace(/\s+/g, '-')}`}
                 >
                   {hobby}
-                </Badge>
+                </Button>
               ))}
             </div>
+          </div>
+
+          <div className="space-y-6 text-base md:text-lg leading-relaxed">
+            <p>
+              Hello my name is Arijit Bhardwaj and I am a Software Engineer. I love developing full fledged web and mobile applications. 
+              One thing I have improved over time in me, is not giving up, if I want to achieve a milestone, and I don't know how to do it, 
+              I will be honest to myself and I'll dedicate more time to explore and learn. But that's what we do in real life right ? 
+              I may be blunt or straight forward, but I am loyal, if I chose you then I will be there for you for 24 hours, because that's 
+              what I do. Challenges excite me, staying idle frights me!
+            </p>
           </div>
         </div>
       </section>

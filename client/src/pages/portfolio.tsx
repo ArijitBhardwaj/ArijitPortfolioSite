@@ -16,23 +16,23 @@ function ProjectCard({ title, description, technologies, githubUrl, liveUrl }: P
   const titleSlug = title.toLowerCase().replace(/\s+/g, '-');
   return (
     <Card className="overflow-hidden hover-elevate active-elevate-2 transition-all duration-300 flex flex-col h-full group" data-testid={`card-project-${titleSlug}`}>
-      {/* Project Image Placeholder */}
-      <div className="aspect-video bg-gradient-to-br from-primary/20 via-primary/10 to-primary/5 flex items-center justify-center border-b border-border transition-all duration-300 group-hover:from-primary/30 group-hover:via-primary/15 group-hover:to-primary/10" data-testid={`img-project-${titleSlug}`}>
-        <div className="text-6xl font-bold text-primary/40 transition-all duration-300 group-hover:text-primary/60 group-hover:scale-110">{title.charAt(0)}</div>
+      {/* Project Image Placeholder - Larger aspect ratio */}
+      <div className="aspect-[4/3] bg-gradient-to-br from-primary/20 via-primary/10 to-primary/5 flex items-center justify-center border-b border-border transition-all duration-300 group-hover:from-primary/30 group-hover:via-primary/15 group-hover:to-primary/10" data-testid={`img-project-${titleSlug}`}>
+        <div className="text-7xl md:text-8xl font-bold text-primary/40 transition-all duration-300 group-hover:text-primary/60 group-hover:scale-110">{title.charAt(0)}</div>
       </div>
       
-      <div className="p-6 flex flex-col flex-grow">
-        <h3 className="text-xl font-bold mb-3" data-testid={`text-project-title-${titleSlug}`}>{title}</h3>
-        <p className="text-sm text-muted-foreground mb-4 flex-grow leading-relaxed line-clamp-3" data-testid={`text-project-desc-${titleSlug}`}>
+      <div className="p-8 flex flex-col flex-grow">
+        <h3 className="text-xl md:text-2xl font-bold mb-4" data-testid={`text-project-title-${titleSlug}`}>{title}</h3>
+        <p className="text-base text-muted-foreground mb-5 flex-grow leading-relaxed" data-testid={`text-project-desc-${titleSlug}`}>
           {description}
         </p>
         
-        <div className="flex flex-wrap gap-2 mb-4">
+        <div className="flex flex-wrap gap-2 mb-5">
           {technologies.map((tech) => (
             <Badge
               key={tech}
               variant="secondary"
-              className="bg-primary/10 text-primary hover:bg-primary/20 font-mono text-xs"
+              className="bg-primary/10 text-primary hover:bg-primary/20 font-mono text-xs px-3 py-1"
               data-testid={`badge-project-${titleSlug}-tech-${tech.toLowerCase().replace(/\s+/g, '-')}`}
             >
               {tech}
@@ -153,7 +153,7 @@ export default function Portfolio() {
       {/* Projects Grid */}
       <section className="py-16 px-4">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 lg:gap-12">
             {projects.map((project, index) => (
               <div key={index} className={`animate-fade-in-up stagger-${(index % 10) + 1}`}>
                 <ProjectCard {...project} />
