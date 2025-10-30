@@ -11,8 +11,9 @@ The portfolio is built as a full-stack application with a React frontend and Exp
 **Latest Image Integration Update:**
 - ✅ **Integrated user profile photos** - Personal photos now displayed throughout portfolio:
   * Sidebar avatar: User-provided profile photo (linkin..myb_1761849483072.png) in circular frame with primary border
-  * Hero section: Outdoor professional photo (image_1761849584907.png) positioned top-right with left-aligned text
-  * Hero redesigned: Photo in top-right corner (128px mobile, 192px desktop) with "You Know I Got This!" text left-aligned
+  * Hero section: Outdoor professional photo (image_1761849584907.png) positioned bottom-right, full-body visible
+  * Hero redesigned: Full-height photo (35vh hero, 300px minimum) showing complete body from head to feet without cropping
+  * Text "You Know I Got This!" left-aligned with photo on right side
 - ✅ **Added stock images to all 10 portfolio projects** - Each project card now displays relevant imagery:
   * Proactivly: AI chatbot business planning image
   * Fursight: E-commerce content creation image
@@ -26,10 +27,15 @@ The portfolio is built as a full-stack application with a React frontend and Exp
   * Word Saber VR: VR education game learning image
 - ✅ **Updated project title** - "Virtual Reality - Training" renamed to "Virtual Reality Industrial Training"
 - ✅ **Enhanced portfolio card interactions** - Images scale on hover (transform: scale(1.05)) with smooth transitions
+- ✅ **Compact hero and stats layout** - Matching reference website design:
+  * Hero section reduced to 35vh (minimum 300px) for compact presentation
+  * Stats section padding reduced from py-8 to py-4 for tighter spacing
+  * Stat cards made smaller: p-4 padding, 40px icons, text-3xl values, text-xs labels
+  * Overall page shows hero + stats + skills heading in first viewport
 - ✅ **Comprehensive E2E testing passed** - Verified all images display correctly on desktop and mobile
 
 **Previous Complete Redesign - Matching Reference Site (knowprabhjyot.github.io):**
-- ✅ **Further reduced hero section** - Now 45vh (down from 60vh) ensuring "My Skill Set" visible without scrolling
+- ✅ **Further reduced hero section** - Optimized from 60vh to 35vh ensuring efficient space usage
   * Compact text sizing: heading text-2xl md:text-4xl, subtitle text-sm md:text-base
 - ✅ **Updated stats section** - Reduced to 3 cards with correct values:
   * Industry Experience: 4+ (updated from 5+)
