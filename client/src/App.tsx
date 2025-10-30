@@ -36,14 +36,14 @@ function App() {
       <ThemeProvider defaultTheme="dark">
         <TooltipProvider>
           <SidebarProvider style={style as React.CSSProperties}>
-            <div className="flex h-screen w-full">
+            <div className="flex min-h-screen w-full">
               <AppSidebar />
-              <SidebarInset className="flex flex-col">
-                <div className="flex items-center justify-between md:hidden p-2 border-b border-border">
+              <SidebarInset className="flex flex-col flex-1">
+                <div className="flex items-center justify-between md:hidden p-2 border-b border-border bg-background">
                   <SidebarTrigger data-testid="button-sidebar-toggle" />
                 </div>
                 <NavigationTabs />
-                <main className="flex-1 overflow-auto">
+                <main className="flex-1">
                   <Router />
                 </main>
               </SidebarInset>
