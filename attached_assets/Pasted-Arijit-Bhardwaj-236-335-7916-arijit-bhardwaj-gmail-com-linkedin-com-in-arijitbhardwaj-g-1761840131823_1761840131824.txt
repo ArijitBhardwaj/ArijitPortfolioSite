@@ -1,0 +1,76 @@
+Arijit Bhardwaj
+236-335-7916  •  arijit.bhardwaj@gmail.com  •  linkedin.com/in/arijitbhardwaj  •  github.com/ArijitBhardwaj
+SUMMARY
+Full Stack Developer with proven experience building scalable, user-centric applications across web and XR. Strong in React/TypeScript, Node.js/Express, Firebase/AWS, and real-time systems (WebSockets). Passionate about performance, clean architecture, and shipping useful products.
+EDUCATION
+Vancouver Community College, Vancouver, BC	Vancouver, BC
+Diploma in Computer Systems Technology	Jun 2025
+Indian Institute of Technology, Delhi	New Delhi, India
+Bachelor of Technology in Textile Technology	May 2020
+PROJECTS
+Proactivly (AI Business Chatbot)  React | TypeScript | Node.js | Express | Firebase Auth/Firestore | Google Gemini API
+A web app that guides entrepreneurs from raw ideas to structured business models through conversational AI.
+• Designed an AI agentic workflow using Google Gemini API with context-aware memory, enabling the chatbot to capture user intent and build coherent business models.
+• Integrated prompt-driven reasoning and validation steps, improving clarity and reliability of AI responses.
+• Built a modular React/TypeScript frontend with Context API and TanStack Query for responsive, real-time interactions.
+• Developed a secure Node.js/Express backend with Firebase Auth (JWT) and Firestore to persist conversation history and support scaling.
+• Delivered an analytics dashboard (Chart.js) to surface engagement patterns and guide product decisions.
+• Optimized serverless deployment and CI/CD (GitHub Actions + Firebase), improving release velocity and runtime efficiency.
+• Collaborated with users in testing and iterative design to refine conversation flows and UX, improving onboarding and end-to-end completion.
+Fursight (AI Content Automation Platform)  React | TypeScript | Node.js | Express | Firebase Auth/Firestore | Qdrant | Google Gemini 2.5 Flash API | OpenAI Embeddings | Shopify GraphQL API | Pinterest API v5
+A SaaS that automates content creation for e-commerce merchants by ingesting research docs and generating SEO-optimized blogs and Pinterest pins with draft management.
+• Architected a semantic search pipeline with OpenAI text-embedding-3-small + Qdrant, enabling context-aware generation from PDFs/URLs (≥0.7 relevance).
+• Engineered a multi-tenant RAG system with Gemini 2.5 Flash, with prompt engineering and JSON parsing + retry for 95%+ reliability.
+• Built a modular React/TypeScript SPA (shadcn/ui, TanStack Query, Wouter) with dark mode and role-based UI (owner/student/helper).
+• Developed a scalable Node.js/Express backend with Firebase Auth (JWT), Firestore, and tenant isolation; integrated BullMQ for jobs and 50MB uploads.
+• Integrated Shopify Admin GraphQL + Pinterest API v5 for direct publishing with secure credentials, preserving SEO metadata and supporting CSV bulk ops.
+• Optimized processing via memory-efficient chunking (~4k chars, 1k-token overlap), batch embeddings, and generator-based streaming to handle large inputs.
+AR Furniture Showcase  Unity | AR Foundation | Blender | C#
+An AR app for realistic virtual furniture placement with accurate scaling, occlusion, and lighting.
+• Modeled and optimized 3D assets in Blender with custom shaders and textures for realism while maintaining performance.
+• Integrated ARKit/ARCore via AR Foundation with plane detection, anchoring, and persisted placement across sessions.
+• Designed intuitive UI for selection, transform (scale/rotate), and material presets with undo/redo.
+• Optimized runtime via asset bundling, LOD models, and profiling to ensure smooth interactions on mid-range devices.
+NaviGo (Indoor Navigation System)  React | Material-UI | Node.js | Express | Firebase Auth/Firestore | A* Algorithm | Device Orientation API
+A real-time indoor navigation web app for large complexes providing turn-by-turn directions via QR calibration and device sensors.
+• Engineered an optimized A* pathfinding algorithm with a 1.5 m neighbor-distance threshold over 1,400+ nodes to constrain routes to walkable corridors (no diagonal shortcuts).
+• Built a canvas-based map renderer with animated paths, coordinate transforms, and gesture controls (zoom/pan/pinch) achieving smooth 60 fps guidance.
+• Integrated compass/PDR using DeviceOrientationEvent/DeviceMotionEvent with iOS permission flows and calibration for −19.5° magnetic declination and 32° map rotation.
+• Implemented direction-based route chunking (~15 m segments) for step-by-step navigation with Previous/Next controls and context-aware map windows.
+• Added Firebase Authentication (email/password, Google OAuth) and Firestore trip history (timestamps, distance, completion); configured CI/CD to Pages (FE) and Render (BE) with Vite proxy and CORS.
+Collaborative Note-Taking Platform (Real-time)  React | Node.js | Express | Socket.IO | Firebase Auth | AWS DynamoDB | Chrome Extension (Manifest V3)
+A multi-platform note-taking app enabling sub-second real-time collaboration across web and Chrome extension with instant sync.
+• Architected room-based broadcasting with Socket.IO enabling multiple users to edit shared notes with sub-second synchronization across clients.
+• Implemented role-based access with Firebase JWT and custom middleware; email-based invitations and sharing stored in DynamoDB.
+• Unified authentication/API layer for React web app and MV3 Chrome extension, avoiding code duplication and enabling consistent UX.
+• Designed RESTful endpoints atop DynamoDB with scan-and-filter patterns for collaborative access and low-latency reads/updates.
+• Built a unified WebSocket server by combining Express HTTP and Socket.IO on a single port, simplifying infra and ensuring reliable event propagation.
+• Secured endpoints with Firebase Admin SDK token verification to prevent unauthorized note access and collaboration features.
+EXPERIENCE
+Co-Founder, Proactivly AI
+• Co-building an AI SaaS for interactive business-plan creation; aligned roadmap, UX and documentation.
+• Architected Firebase-based backend (Auth, Firestore, Storage) and Gemini integrations (Flash Lite/Pro/TTS).
+• Implemented Stripe subscriptions with tiered access, coupons, invoicing; CI/CD via GitHub Actions.	Mississauga, ON · Remote
+Jul 2025 – Present
+Web Developer, Mori Cat
+• Maintained the Moricat site, improved SEO and performance; integrated Shopify stores and analytics.
+• Built in-house automation tools for product/blog sync and Pinterest/Shopify workflows.	Kingston, ON · Remote
+Oct 2024 – Present
+Head of Operations, Travvir
+• Improved customer retention by 15% via feedback loops and targeted personalization.
+• Managed Google Ads end‑to‑end; increased conversions by 20% while reducing CPA.	Noida, India · Hybrid
+Sep 2019 – Jun 2023
+Operations Head, HopeQure.com
+• Led digital marketing (SEO/SEM/SMM), site design, local search, and ad placement to grow reach.	Noida, India
+Jul 2018 – Jun 2019
+Business Development Intern, Nestkeys Infratech
+• Mentored 34 trainees; built training materials/metrics to hit premium collection targets.
+• Partnered with senior advisors to refine pitches, boosting trainee performance and CX.	Gurugram, India
+Jun 2017 – Aug 2017
+Student Volunteer, AIESEC in Malaysia — University of Nottingham Malaysia Campus
+• Led English/Math workshops for NGO students; supported community fundraising strategies.	Malaysia
+Dec 2014 – Jan 2015
+TECHNICAL SKILLS
+Languages: JavaScript, TypeScript, Python, C++, Java, C#  |  Frameworks: React.js, Node.js, Express, Spring Boot
+Cloud/Tools: Git, Docker, AWS (Lambda, DynamoDB, S3), Firebase  |  Databases: MongoDB, PostgreSQL, Neo4j, Firestore
+XR/AR: Unity, Unreal Engine, AR Foundation, TikTok Effect House  |  AI/ML: Google Gemini API
