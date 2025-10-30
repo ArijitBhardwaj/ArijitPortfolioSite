@@ -6,6 +6,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { ThemeProvider } from "@/components/theme-provider";
 import { SidebarProvider, SidebarInset, SidebarTrigger } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/app-sidebar";
+import { NavigationTabs } from "@/components/navigation-tabs";
 import Home from "@/pages/home";
 import About from "@/pages/about";
 import Portfolio from "@/pages/portfolio";
@@ -26,7 +27,7 @@ function Router() {
 
 function App() {
   const style = {
-    "--sidebar-width": "20rem",
+    "--sidebar-width": "16rem",
     "--sidebar-width-icon": "4rem",
   };
 
@@ -37,11 +38,11 @@ function App() {
           <SidebarProvider style={style as React.CSSProperties}>
             <div className="flex h-screen w-full">
               <AppSidebar />
-              <SidebarInset>
-                <header className="flex items-center justify-between p-4 border-b border-border md:hidden">
-                  <h2 className="text-lg font-bold">Arijit Bhardwaj</h2>
+              <SidebarInset className="flex flex-col">
+                <div className="flex items-center justify-between md:hidden p-2 border-b border-border">
                   <SidebarTrigger data-testid="button-sidebar-toggle" />
-                </header>
+                </div>
+                <NavigationTabs />
                 <main className="flex-1 overflow-auto">
                   <Router />
                 </main>

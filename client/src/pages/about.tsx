@@ -1,7 +1,7 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ExternalLink, Calendar, MapPin } from "lucide-react";
+import { ExternalLink, Calendar, MapPin, GraduationCap } from "lucide-react";
 
 interface TimelineItemProps {
   type: "employment" | "education";
@@ -12,61 +12,71 @@ interface TimelineItemProps {
   description: string;
   bullets: string[];
   githubUrl?: string;
+  isRight?: boolean;
 }
 
-function TimelineItem({ type, title, organization, location, period, description, bullets, githubUrl }: TimelineItemProps) {
+function AlternatingTimelineItem({ type, title, organization, location, period, description, bullets, githubUrl, isRight = false }: TimelineItemProps) {
   return (
-    <div className="relative pl-8 pb-12 last:pb-0">
-      {/* Timeline line and dot */}
-      <div className="absolute left-0 top-2 bottom-0 w-0.5 bg-border" />
-      <div className="absolute left-[-7px] top-2 w-4 h-4 rounded-full bg-primary border-4 border-background" />
+    <div className={`relative flex ${isRight ? 'md:justify-end' : 'md:justify-start'} mb-12`}>
+      {/* Central timeline line and dot - hidden on mobile */}
+      <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 top-0 bottom-0 w-0.5 bg-border" />
+      <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 top-6 w-4 h-4 rounded-full bg-primary border-4 border-background z-10">
+        {type === "education" && <GraduationCap className="absolute -left-6 -top-6 w-8 h-8 text-primary" />}
+      </div>
       
-      <Card className="p-6 hover-elevate transition-all duration-300">
-        <div className="flex flex-wrap items-start justify-between gap-2 mb-3">
-          <div>
-            <h3 className="text-xl font-semibold mb-1">{organization}</h3>
-            <p className="text-primary font-medium">{title}</p>
-          </div>
-          <div className="flex flex-col items-end gap-1">
-            <div className="flex items-center gap-2 text-sm text-muted-foreground">
-              <Calendar className="w-4 h-4" />
-              <span>{period}</span>
+      {/* Mobile timeline (left side) */}
+      <div className="md:hidden absolute left-0 top-2 bottom-0 w-0.5 bg-border" />
+      <div className="md:hidden absolute left-[-7px] top-6 w-4 h-4 rounded-full bg-primary border-4 border-background" />
+      
+      {/* Content card */}
+      <div className={`w-full md:w-[calc(50%-2rem)] pl-8 md:pl-0 ${isRight ? 'md:pl-8' : 'md:pr-8'}`}>
+        <Card className="p-6 hover-elevate transition-all duration-300">
+          <div className="flex flex-wrap items-start justify-between gap-2 mb-3">
+            <div>
+              <h3 className="text-xl font-semibold mb-1">{organization}</h3>
+              <p className="text-primary font-medium">{title}</p>
             </div>
-            {location && (
+            <div className="flex flex-col items-end gap-1">
               <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                <MapPin className="w-4 h-4" />
-                <span>{location}</span>
+                <Calendar className="w-4 h-4" />
+                <span>{period}</span>
               </div>
-            )}
+              {location && (
+                <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                  <MapPin className="w-4 h-4" />
+                  <span>{location}</span>
+                </div>
+              )}
+            </div>
           </div>
-        </div>
-        
-        {description && <p className="text-sm text-muted-foreground mb-4 italic">{description}</p>}
-        
-        <ul className="space-y-2 mb-4">
-          {bullets.map((bullet, index) => (
-            <li key={index} className="text-sm flex gap-2">
-              <span className="text-primary mt-1.5">•</span>
-              <span className="flex-1">{bullet}</span>
-            </li>
-          ))}
-        </ul>
-        
-        {githubUrl && (
-          <Button
-            variant="outline"
-            size="sm"
-            className="gap-2"
-            asChild
-            data-testid="button-work-samples"
-          >
-            <a href={githubUrl} target="_blank" rel="noopener noreferrer">
-              <ExternalLink className="w-4 h-4" />
-              Work Samples
-            </a>
-          </Button>
-        )}
-      </Card>
+          
+          {description && <p className="text-sm text-muted-foreground mb-4 italic">{description}</p>}
+          
+          <ul className="space-y-2 mb-4">
+            {bullets.map((bullet, index) => (
+              <li key={index} className="text-sm flex gap-2">
+                <span className="text-primary mt-1.5">•</span>
+                <span className="flex-1">{bullet}</span>
+              </li>
+            ))}
+          </ul>
+          
+          {githubUrl && (
+            <Button
+              variant="outline"
+              size="sm"
+              className="gap-2"
+              asChild
+              data-testid="button-work-samples"
+            >
+              <a href={githubUrl} target="_blank" rel="noopener noreferrer">
+                <ExternalLink className="w-4 h-4" />
+                Work Samples
+              </a>
+            </Button>
+          )}
+        </Card>
+      </div>
     </div>
   );
 }
@@ -131,7 +141,7 @@ export default function About() {
       title: "Bachelor of Technology in Textile Technology",
       organization: "Indian Institute of Technology, Delhi",
       location: "New Delhi, India",
-      period: "Aug 2013 - May 2020",
+      period: "Graduated 2020",
       description: "Engineering foundation with data structures and algorithms",
       bullets: [
         "Developed strong analytical and problem-solving skills through rigorous engineering curriculum",
@@ -198,57 +208,86 @@ export default function About() {
         </div>
       </section>
 
-      {/* Journey Section */}
+      {/* Journey Section with Alternating Timeline */}
       <section className="py-16 px-4 bg-card/50">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-semibold mb-12">My Journey</h2>
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl font-semibold mb-12 text-center">My Journey</h2>
           
-          <div className="mb-12">
-            <h3 className="text-2xl font-semibold mb-6 flex items-center gap-2">
-              <span className="text-primary">💼</span> Current Employment
-            </h3>
-            <div className="space-y-0">
-              {timeline.slice(0, 2).map((item, index) => (
-                <TimelineItem key={index} {...item} />
-              ))}
-            </div>
-          </div>
-
-          <div className="mb-12">
-            <h3 className="text-2xl font-semibold mb-6 flex items-center gap-2">
-              <span className="text-primary">📋</span> Former Employment
-            </h3>
-            <div className="space-y-0">
-              {timeline.slice(2, 3).map((item, index) => (
-                <TimelineItem key={index} {...item} />
-              ))}
-            </div>
-          </div>
-
-          <div>
-            <h3 className="text-2xl font-semibold mb-6 flex items-center gap-2">
-              <span className="text-primary">🎓</span> Education
-            </h3>
-            <div className="space-y-0">
-              {timeline.slice(3).map((item, index) => (
-                <TimelineItem key={index} {...item} />
-              ))}
-            </div>
+          <div className="relative">
+            {timeline.map((item, index) => (
+              <AlternatingTimelineItem key={index} {...item} isRight={index % 2 === 1} />
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="py-8 px-4 bg-card border-t border-border">
-        <div className="max-w-6xl mx-auto text-center">
-          <p className="text-sm text-muted-foreground">
-            Made with ❤️ by Arijit
-          </p>
-          <p className="text-xs text-muted-foreground mt-2">
-            Email: arijit.bhardwaj@gmail.com
-          </p>
+      {/* Skills Section */}
+      <section className="py-16 px-4">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl font-semibold mb-6">Skills & Expertise</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <Card className="p-6">
+              <h3 className="text-xl font-semibold mb-4">Frontend</h3>
+              <div className="flex flex-wrap gap-2">
+                {["React", "TypeScript", "Next.js", "Tailwind CSS", "Three.js"].map((skill) => (
+                  <Badge
+                    key={skill}
+                    variant="secondary"
+                    className="bg-primary/10 text-primary"
+                  >
+                    {skill}
+                  </Badge>
+                ))}
+              </div>
+            </Card>
+            
+            <Card className="p-6">
+              <h3 className="text-xl font-semibold mb-4">Backend</h3>
+              <div className="flex flex-wrap gap-2">
+                {["Node.js", "Express", "Firebase", "PostgreSQL", "REST APIs"].map((skill) => (
+                  <Badge
+                    key={skill}
+                    variant="secondary"
+                    className="bg-primary/10 text-primary"
+                  >
+                    {skill}
+                  </Badge>
+                ))}
+              </div>
+            </Card>
+
+            <Card className="p-6">
+              <h3 className="text-xl font-semibold mb-4">DevOps & Tools</h3>
+              <div className="flex flex-wrap gap-2">
+                {["Docker", "AWS", "GitHub Actions", "Git", "Linux"].map((skill) => (
+                  <Badge
+                    key={skill}
+                    variant="secondary"
+                    className="bg-primary/10 text-primary"
+                  >
+                    {skill}
+                  </Badge>
+                ))}
+              </div>
+            </Card>
+
+            <Card className="p-6">
+              <h3 className="text-xl font-semibold mb-4">XR Development</h3>
+              <div className="flex flex-wrap gap-2">
+                {["AR Foundation", "Unity", "Vuforia", "WebXR"].map((skill) => (
+                  <Badge
+                    key={skill}
+                    variant="secondary"
+                    className="bg-primary/10 text-primary"
+                  >
+                    {skill}
+                  </Badge>
+                ))}
+              </div>
+            </Card>
+          </div>
         </div>
-      </footer>
+      </section>
     </div>
   );
 }

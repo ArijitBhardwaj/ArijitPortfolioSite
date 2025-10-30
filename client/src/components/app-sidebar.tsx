@@ -1,8 +1,4 @@
-import { Link, useLocation } from "wouter";
-import { Moon, Sun } from "lucide-react";
 import { FaGithub, FaLinkedin, FaTwitter, FaInstagram } from "react-icons/fa";
-import { useTheme } from "./theme-provider";
-import { Button } from "@/components/ui/button";
 import {
   Sidebar,
   SidebarContent,
@@ -11,9 +7,6 @@ import {
   SidebarGroupContent,
   SidebarGroupLabel,
   SidebarHeader,
-  SidebarMenu,
-  SidebarMenuItem,
-  SidebarMenuButton,
 } from "@/components/ui/sidebar";
 
 interface SkillBarProps {
@@ -39,16 +32,6 @@ function SkillBar({ skill, percentage }: SkillBarProps) {
 }
 
 export function AppSidebar() {
-  const [location] = useLocation();
-  const { theme, setTheme } = useTheme();
-
-  const navItems = [
-    { path: "/", label: "HOME" },
-    { path: "/about", label: "ABOUT" },
-    { path: "/portfolio", label: "PORTFOLIO" },
-    { path: "/contact", label: "CONTACT" },
-  ];
-
   const skills = [
     { name: "React.js", percentage: 95 },
     { name: "Node.js", percentage: 90 },
@@ -70,75 +53,43 @@ export function AppSidebar() {
 
   return (
     <Sidebar>
-      <SidebarHeader className="border-b border-sidebar-border pb-6">
-        <div className="flex flex-col items-center pt-4">
-          <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-primary mb-4">
-            <div className="w-full h-full bg-gradient-to-br from-primary/20 to-primary/40 flex items-center justify-center text-4xl font-bold text-primary">
+      <SidebarHeader className="border-b border-sidebar-border pb-8">
+        <div className="flex flex-col items-center pt-8">
+          <div className="w-36 h-36 rounded-full overflow-hidden border-4 border-primary mb-6">
+            <div className="w-full h-full bg-gradient-to-br from-primary/20 to-primary/40 flex items-center justify-center text-5xl font-bold text-primary">
               AB
             </div>
           </div>
-          <h2 className="text-2xl font-bold text-sidebar-foreground mb-1">Arijit Bhardwaj</h2>
-          <p className="text-sm text-muted-foreground mb-2">Full Stack Developer</p>
-          <div className="flex gap-4 text-xs text-muted-foreground">
-            <div>
-              <span className="font-medium">Residence:</span> Vancouver, BC
+          <h2 className="text-2xl font-bold text-sidebar-foreground mb-2">Arijit Bhardwaj</h2>
+          <p className="text-sm text-muted-foreground mb-4">Full Stack Developer</p>
+          <div className="w-full px-4 space-y-1 text-sm">
+            <div className="flex justify-between">
+              <span className="text-muted-foreground font-medium">Residence:</span>
+              <span className="text-sidebar-foreground">Vancouver, BC</span>
+            </div>
+            <div className="flex justify-between">
+              <span className="text-muted-foreground font-medium">City:</span>
+              <span className="text-sidebar-foreground">Vancouver, BC</span>
             </div>
           </div>
-          <div className="text-xs text-muted-foreground">
-            <span className="font-medium">City:</span> Vancouver, BC
-          </div>
-        </div>
-        <div className="absolute top-4 right-4 z-10">
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-            data-testid="button-theme-toggle"
-            className="rounded-full"
-            aria-label="Toggle theme"
-          >
-            {theme === "dark" ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
-          </Button>
         </div>
       </SidebarHeader>
       
       <SidebarContent>
         <SidebarGroup>
-          <SidebarGroupContent>
-            <SidebarMenu>
-              {navItems.map((item) => (
-                <SidebarMenuItem key={item.path}>
-                  <SidebarMenuButton
-                    asChild
-                    isActive={location === item.path}
-                    data-testid={`link-nav-${item.label.toLowerCase()}`}
-                  >
-                    <Link href={item.path}>
-                      <span className="text-sm font-medium tracking-wide uppercase">{item.label}</span>
-                    </Link>
-                  </SidebarMenuButton>
-                </SidebarMenuItem>
-              ))}
-            </SidebarMenu>
-          </SidebarGroupContent>
-        </SidebarGroup>
-
-        <SidebarGroup>
-          <SidebarGroupLabel className="uppercase tracking-wide text-xs font-semibold">
+          <SidebarGroupLabel className="uppercase tracking-wide text-sm font-bold px-4 mb-4">
             Skills
           </SidebarGroupLabel>
-          <SidebarGroupContent className="max-h-[400px] overflow-y-auto">
-            <div className="px-2">
-              {skills.map((skill) => (
-                <SkillBar key={skill.name} skill={skill.name} percentage={skill.percentage} />
-              ))}
-            </div>
+          <SidebarGroupContent className="max-h-[400px] overflow-y-auto px-4">
+            {skills.map((skill) => (
+              <SkillBar key={skill.name} skill={skill.name} percentage={skill.percentage} />
+            ))}
           </SidebarGroupContent>
         </SidebarGroup>
       </SidebarContent>
 
-      <SidebarFooter className="border-t border-sidebar-border">
-        <div className="flex justify-center gap-4 py-4">
+      <SidebarFooter className="border-t border-sidebar-border pb-6">
+        <div className="flex justify-center gap-6 pt-6">
           {socialLinks.map((social) => (
             <a
               key={social.label}

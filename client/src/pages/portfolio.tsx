@@ -40,32 +40,31 @@ function ProjectCard({ title, description, technologies, githubUrl, liveUrl }: P
           ))}
         </div>
         
-        <div className="flex gap-3">
+        <div className="flex flex-col gap-2">
           {githubUrl && (
-            <a href={githubUrl} target="_blank" rel="noopener noreferrer" className="flex-1">
-              <Button
-                variant="outline"
-                size="sm"
-                className="gap-2 w-full"
-                data-testid={`button-github-${titleSlug}`}
-              >
-                <Github className="w-4 h-4" />
-                GitHub
-              </Button>
+            <a 
+              href={githubUrl} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="text-sm text-muted-foreground hover:text-primary underline flex items-center gap-1"
+              data-testid={`link-github-${titleSlug}`}
+            >
+              Github URL
             </a>
           )}
           {liveUrl && (
-            <a href={liveUrl} target="_blank" rel="noopener noreferrer" className="flex-1">
-              <Button
-                variant="default"
-                size="sm"
-                className="gap-2 w-full"
-                data-testid={`button-live-${titleSlug}`}
-              >
+            <Button
+              variant="default"
+              size="sm"
+              className="gap-2 w-full"
+              asChild
+              data-testid={`button-live-${titleSlug}`}
+            >
+              <a href={liveUrl} target="_blank" rel="noopener noreferrer">
                 <ExternalLink className="w-4 h-4" />
-                Live Demo
-              </Button>
-            </a>
+                Preview
+              </a>
+            </Button>
           )}
         </div>
       </div>
@@ -129,8 +128,8 @@ export default function Portfolio() {
 
       {/* Projects Grid */}
       <section className="py-16 px-4">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {projects.map((project, index) => (
               <ProjectCard key={index} {...project} />
             ))}
