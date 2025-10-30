@@ -12,6 +12,12 @@ The portfolio is built as a full-stack application with a React frontend and Exp
 - ✅ **Further reduced hero section** - Now 45vh (down from 60vh) ensuring "My Skill Set" visible without scrolling
   * Desktop avatar: 128px (w-32 h-32), Mobile: 96px (w-24 h-24)
   * Compact text sizing: heading text-2xl md:text-4xl, subtitle text-sm md:text-base
+- ✅ **Updated stats section** - Reduced to 3 cards with correct values:
+  * Industry Experience: 4+ (updated from 5+)
+  * Completed Projects: 10+ (unchanged)
+  * Companies Worked: 3+ (updated from 8+)
+  * Removed "Years Teaching" stat
+  * Reduced padding to py-8 for compact design matching reference
 - ✅ **Enlarged portfolio cards** - Bigger, more prominent cards matching reference design:
   * Changed to 2-column grid on desktop (was 3-column)
   * Larger aspect ratio: 4:3 (was 16:9)

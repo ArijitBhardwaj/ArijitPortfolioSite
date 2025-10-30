@@ -49,10 +49,9 @@ function SkillCard({ title, description, technologies }: SkillCardProps) {
 
 export default function Home() {
   const stats = [
-    { icon: <Briefcase className="w-12 h-12 text-primary" />, value: "5+", label: "Years Experience" },
+    { icon: <Briefcase className="w-12 h-12 text-primary" />, value: "4+", label: "Industry Experience" },
     { icon: <FolderGit2 className="w-12 h-12 text-primary" />, value: "10+", label: "Completed Projects" },
-    { icon: <Users className="w-12 h-12 text-primary" />, value: "8+", label: "Companies Worked" },
-    { icon: <GraduationCap className="w-12 h-12 text-primary" />, value: "2+", label: "Years Teaching" },
+    { icon: <Users className="w-12 h-12 text-primary" />, value: "3+", label: "Companies Worked" },
   ];
 
   const skills = [
@@ -115,9 +114,9 @@ export default function Home() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 px-4 bg-background">
+      <section className="py-8 px-4 bg-background">
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {stats.map((stat, index) => (
               <div key={index} className={`animate-fade-in-up stagger-${index + 1}`}>
                 <StatCard {...stat} />
