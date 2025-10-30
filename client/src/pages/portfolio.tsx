@@ -1,0 +1,154 @@
+import { Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { ExternalLink, Github } from "lucide-react";
+
+interface ProjectCardProps {
+  title: string;
+  description: string;
+  technologies: string[];
+  githubUrl?: string;
+  liveUrl?: string;
+  image?: string;
+}
+
+function ProjectCard({ title, description, technologies, githubUrl, liveUrl }: ProjectCardProps) {
+  const titleSlug = title.toLowerCase().replace(/\s+/g, '-');
+  return (
+    <Card className="overflow-hidden hover-elevate transition-all duration-300 flex flex-col h-full" data-testid={`card-project-${titleSlug}`}>
+      {/* Project Image Placeholder */}
+      <div className="aspect-video bg-gradient-to-br from-primary/20 via-primary/10 to-primary/5 flex items-center justify-center border-b border-border" data-testid={`img-project-${titleSlug}`}>
+        <div className="text-6xl font-bold text-primary/40">{title.charAt(0)}</div>
+      </div>
+      
+      <div className="p-6 flex flex-col flex-grow">
+        <h3 className="text-xl font-bold mb-3" data-testid={`text-project-title-${titleSlug}`}>{title}</h3>
+        <p className="text-sm text-muted-foreground mb-4 flex-grow leading-relaxed line-clamp-3" data-testid={`text-project-desc-${titleSlug}`}>
+          {description}
+        </p>
+        
+        <div className="flex flex-wrap gap-2 mb-4">
+          {technologies.map((tech) => (
+            <Badge
+              key={tech}
+              variant="secondary"
+              className="bg-primary/10 text-primary hover:bg-primary/20 font-mono text-xs"
+              data-testid={`badge-project-${titleSlug}-tech-${tech.toLowerCase().replace(/\s+/g, '-')}`}
+            >
+              {tech}
+            </Badge>
+          ))}
+        </div>
+        
+        <div className="flex gap-3">
+          {githubUrl && (
+            <a href={githubUrl} target="_blank" rel="noopener noreferrer" className="flex-1">
+              <Button
+                variant="outline"
+                size="sm"
+                className="gap-2 w-full"
+                data-testid={`button-github-${titleSlug}`}
+              >
+                <Github className="w-4 h-4" />
+                GitHub
+              </Button>
+            </a>
+          )}
+          {liveUrl && (
+            <a href={liveUrl} target="_blank" rel="noopener noreferrer" className="flex-1">
+              <Button
+                variant="default"
+                size="sm"
+                className="gap-2 w-full"
+                data-testid={`button-live-${titleSlug}`}
+              >
+                <ExternalLink className="w-4 h-4" />
+                Live Demo
+              </Button>
+            </a>
+          )}
+        </div>
+      </div>
+    </Card>
+  );
+}
+
+export default function Portfolio() {
+  const projects: ProjectCardProps[] = [
+    {
+      title: "Proactivly",
+      description: "An AI-powered business chatbot that guides entrepreneurs from raw ideas to structured business models through conversational AI with context-aware memory and analytics dashboard.",
+      technologies: ["React", "TypeScript", "Node.js", "Express", "Firebase", "Gemini API"],
+      githubUrl: "https://github.com/ArijitBhardwaj",
+    },
+    {
+      title: "Fursight",
+      description: "AI content automation platform for e-commerce merchants that generates SEO-optimized blogs and Pinterest pins from research documents using RAG and semantic search.",
+      technologies: ["React", "TypeScript", "Qdrant", "Gemini API", "Shopify", "Pinterest API"],
+      githubUrl: "https://github.com/ArijitBhardwaj",
+    },
+    {
+      title: "AR Furniture Showcase",
+      description: "Augmented reality application for realistic virtual furniture placement with accurate scaling, occlusion, and lighting using ARKit/ARCore integration.",
+      technologies: ["Unity", "AR Foundation", "Blender", "C#"],
+      githubUrl: "https://github.com/ArijitBhardwaj/TeamXRProject",
+    },
+    {
+      title: "NaviGo",
+      description: "Real-time indoor navigation web app providing turn-by-turn directions via QR calibration and device sensors with optimized A* pathfinding algorithm.",
+      technologies: ["React", "Material-UI", "Node.js", "Firebase", "A* Algorithm"],
+      githubUrl: "https://github.com/ArijitBhardwaj",
+    },
+    {
+      title: "Collaborative Notes",
+      description: "Multi-platform note-taking app with sub-second real-time collaboration across web and Chrome extension using Socket.IO and role-based access control.",
+      technologies: ["React", "Node.js", "Socket.IO", "AWS DynamoDB", "Chrome Extension"],
+      githubUrl: "https://github.com/ArijitBhardwaj",
+    },
+    {
+      title: "Movie Explorer",
+      description: "Interactive movie database web application with async API fetching, responsive Bootstrap UI, and comprehensive movie information display.",
+      technologies: ["HTML", "CSS", "JavaScript", "Bootstrap", "TMDb API"],
+      githubUrl: "https://github.com/ArijitBhardwaj/Midterm_movieProject",
+    },
+  ];
+
+  return (
+    <div className="min-h-screen pb-16">
+      {/* Header Section */}
+      <section className="py-16 px-4 bg-gradient-to-br from-primary/10 via-background to-background">
+        <div className="max-w-6xl mx-auto text-center">
+          <h1 className="text-4xl md:text-5xl font-bold mb-6">Portfolio</h1>
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+            With more than 5+ years of working on different roles like Software Engineer, R&D Engineer, 
+            and Web Instructor, it has been a great journey, and I have made a bunch of products which 
+            improved my skills over time.
+          </p>
+        </div>
+      </section>
+
+      {/* Projects Grid */}
+      <section className="py-16 px-4">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {projects.map((project, index) => (
+              <ProjectCard key={index} {...project} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="py-8 px-4 bg-card border-t border-border">
+        <div className="max-w-6xl mx-auto text-center">
+          <p className="text-sm text-muted-foreground">
+            Made with ❤️ by Arijit
+          </p>
+          <p className="text-xs text-muted-foreground mt-2">
+            Email: arijit.bhardwaj@gmail.com
+          </p>
+        </div>
+      </footer>
+    </div>
+  );
+}
