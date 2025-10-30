@@ -91,20 +91,20 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative h-[60vh] md:h-[65vh] flex items-center justify-center overflow-hidden">
         <MountainBackground />
         <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-          <div className="mb-8">
-            <div className="w-48 h-48 md:w-64 md:h-64 mx-auto rounded-full overflow-hidden border-4 border-primary shadow-2xl">
-              <div className="w-full h-full bg-gradient-to-br from-primary/20 to-primary/40 flex items-center justify-center text-6xl md:text-8xl font-bold text-primary">
+          <div className="mb-6">
+            <div className="w-32 h-32 md:w-40 md:h-40 mx-auto rounded-full overflow-hidden border-4 border-primary shadow-2xl">
+              <div className="w-full h-full bg-gradient-to-br from-primary/20 to-primary/40 flex items-center justify-center text-5xl md:text-6xl font-bold text-primary">
                 AB
               </div>
             </div>
           </div>
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 text-white drop-shadow-lg">
+          <h1 className="text-4xl md:text-6xl font-bold mb-4 text-white drop-shadow-lg">
             You Know I Got This!
           </h1>
-          <p className="text-xl md:text-2xl text-white/90 drop-shadow-md">
+          <p className="text-lg md:text-xl text-white/90 drop-shadow-md">
             Full Stack Developer | Problem Solver | Innovation Builder
           </p>
         </div>

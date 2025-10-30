@@ -110,6 +110,30 @@ export default function Portfolio() {
       technologies: ["Unity", "C#", "VR SDK", "3D Modeling", "Oculus"],
       githubUrl: "https://github.com/ArijitBhardwaj",
     },
+    {
+      title: "OverRun Android Game",
+      description: "Action-packed Android endless runner game featuring dynamic obstacle generation, progressive difficulty scaling, power-ups, and leaderboard integration for competitive gameplay.",
+      technologies: ["Java", "Android SDK", "SQLite", "Canvas API", "Game Development"],
+      githubUrl: "https://github.com/Travis975/Team-Null-CSTP2205-Android-Programming",
+    },
+    {
+      title: "AR Business Card",
+      description: "Innovative augmented reality business card experience that displays interactive 3D models and portfolio content when scanned, creating memorable networking moments.",
+      technologies: ["Unity", "AR Foundation", "Vuforia", "C#", "3D Modeling"],
+      githubUrl: "https://github.com/ArijitBhardwaj/AR_Business_Card",
+    },
+    {
+      title: "Posting App",
+      description: "Modern social media platform inspired by Threads with real-time posting, following system, personalized feed algorithm, and engaging user interactions.",
+      technologies: ["React", "Node.js", "MongoDB", "Socket.IO", "Express", "JWT"],
+      githubUrl: "https://github.com/lordbomebob/Posting_App",
+    },
+    {
+      title: "Word Saber VR",
+      description: "Immersive VR word-slicing game combining rhythm-based mechanics with language learning, featuring gesture recognition and adaptive difficulty for engaging educational gameplay.",
+      technologies: ["Unity", "C#", "VR SDK", "Oculus Integration", "Motion Tracking"],
+      githubUrl: "https://github.com/ArijitBhardwaj/TeamXRProject",
+    },
   ];
 
   return (
