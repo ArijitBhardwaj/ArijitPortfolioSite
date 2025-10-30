@@ -8,18 +8,38 @@ The portfolio is built as a full-stack application with a React frontend and Exp
 
 ## Recent Changes (October 30, 2025)
 
-**Latest Major Enhancements - Portfolio Aesthetics & Content:**
+**Latest Complete Redesign - Matching Reference Site (knowprabhjyot.github.io):**
+- ✅ **Further reduced hero section** - Now 45vh (down from 60vh) ensuring "My Skill Set" visible without scrolling
+  * Desktop avatar: 128px (w-32 h-32), Mobile: 96px (w-24 h-24)
+  * Compact text sizing: heading text-2xl md:text-4xl, subtitle text-sm md:text-base
+- ✅ **Enlarged portfolio cards** - Bigger, more prominent cards matching reference design:
+  * Changed to 2-column grid on desktop (was 3-column)
+  * Larger aspect ratio: 4:3 (was 16:9)
+  * Increased padding: p-8 (was p-6)
+  * Larger fonts: titles text-xl md:text-2xl, descriptions text-base
+  * Bigger spacing: gap-8 md:gap-10 lg:gap-12
+  * Enhanced icon letters: text-7xl md:text-8xl
+- ✅ **About page styling matched to reference**:
+  * Updated hobbies: "Reading", "Researching", "Travel", "Binge Watch"
+  * Hobby badges now rounded buttons with border-2 border-primary
+  * Larger body text: text-base md:text-lg
+  * Content updated to match reference personality
+- ✅ **Added smooth scroll-to-top button** - Bottom-right corner, animated smooth scroll (not instant jump)
+- ✅ **Contact page verified** - Already matches reference with 3 info cards and form
+- ✅ **Added Resume tab and PDF viewer** - Professional resume display with download option
+  * New Resume page at /resume route
+  * Embedded PDF viewer in iframe
+  * Download button with icon
+  * RESUME tab in navigation (5th tab)
+
+**Previous Enhancements:**
 - ✅ **Added 4 new projects** - Total 10 projects now showcased:
   * OverRun Android Game (Java, Android SDK, SQLite)
   * AR Business Card (Unity, AR Foundation, Vuforia)
   * Posting App - Threads Clone (React, Node.js, MongoDB)
   * Word Saber VR (Unity, C#, VR SDK, Oculus)
-- ✅ **Resized hero section** - Changed from full-screen to compact 60vh height matching reference proportions
-- ✅ **Enhanced portfolio grid** - 3-column layout on desktop (lg), 2-column on tablet (md), single column on mobile
 - ✅ **Added subtle animations** - Fade-in and stagger effects on all sections following industry best practices
 - ✅ **Improved hover effects** - Project cards with gradient intensification, icon scaling, and smooth transitions
-- ✅ **Optimized avatar sizing** - Desktop: 144px (w-36 h-36), Mobile: 112px (w-28 h-28)
-- ✅ **Professional micro-interactions** - Active elevation effects and smooth transitions throughout
 
 **Previous Updates:**
 - ✅ Changed sidebar from fixed to natural scrolling - scrolls with page content
