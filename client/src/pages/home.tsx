@@ -12,10 +12,10 @@ interface StatCardProps {
 
 function StatCard({ icon, value, label }: StatCardProps) {
   return (
-    <Card className="p-6 text-center hover-elevate transition-all duration-300" data-testid={`card-stat-${label.toLowerCase().replace(/\s+/g, '-')}`}>
-      <div className="flex justify-center mb-3">{icon}</div>
-      <div className="text-4xl font-bold text-primary mb-2" data-testid={`text-stat-value-${label.toLowerCase().replace(/\s+/g, '-')}`}>{value}</div>
-      <div className="text-sm uppercase tracking-wide text-muted-foreground" data-testid={`text-stat-label-${label.toLowerCase().replace(/\s+/g, '-')}`}>{label}</div>
+    <Card className="p-4 text-center hover-elevate transition-all duration-300" data-testid={`card-stat-${label.toLowerCase().replace(/\s+/g, '-')}`}>
+      <div className="flex justify-center mb-2">{icon}</div>
+      <div className="text-3xl font-bold text-primary mb-1" data-testid={`text-stat-value-${label.toLowerCase().replace(/\s+/g, '-')}`}>{value}</div>
+      <div className="text-xs uppercase tracking-wide text-muted-foreground" data-testid={`text-stat-label-${label.toLowerCase().replace(/\s+/g, '-')}`}>{label}</div>
     </Card>
   );
 }
@@ -50,9 +50,9 @@ function SkillCard({ title, description, technologies }: SkillCardProps) {
 
 export default function Home() {
   const stats = [
-    { icon: <Briefcase className="w-12 h-12 text-primary" />, value: "4+", label: "Industry Experience" },
-    { icon: <FolderGit2 className="w-12 h-12 text-primary" />, value: "10+", label: "Completed Projects" },
-    { icon: <Users className="w-12 h-12 text-primary" />, value: "3+", label: "Companies Worked" },
+    { icon: <Briefcase className="w-10 h-10 text-primary" />, value: "4+", label: "Industry Experience" },
+    { icon: <FolderGit2 className="w-10 h-10 text-primary" />, value: "10+", label: "Completed Projects" },
+    { icon: <Users className="w-10 h-10 text-primary" />, value: "3+", label: "Companies Worked" },
   ];
 
   const skills = [
@@ -91,16 +91,17 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative w-full overflow-hidden" style={{ height: '45vh', maxHeight: '45vh' }}>
+      <section className="relative w-full overflow-hidden" style={{ height: '35vh', maxHeight: '35vh', minHeight: '300px' }}>
         <div className="absolute inset-0">
           <MountainBackground />
         </div>
-        <div className="absolute top-4 right-4 md:top-8 md:right-8 z-20">
-          <div className="w-32 h-32 md:w-48 md:h-48 rounded-lg overflow-hidden border-4 border-primary shadow-2xl">
+        <div className="absolute bottom-0 right-0 md:right-8 z-20 h-full">
+          <div className="h-full flex items-end">
             <img 
               src={heroPhoto} 
               alt="Arijit Bhardwaj" 
-              className="w-full h-full object-cover"
+              className="h-full w-auto object-contain object-bottom"
+              style={{ maxHeight: '100%' }}
             />
           </div>
         </div>
@@ -117,9 +118,9 @@ export default function Home() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-8 px-4 bg-background">
+      <section className="py-4 px-4 bg-background">
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {stats.map((stat, index) => (
               <div key={index} className={`animate-fade-in-up stagger-${index + 1}`}>
                 <StatCard {...stat} />
