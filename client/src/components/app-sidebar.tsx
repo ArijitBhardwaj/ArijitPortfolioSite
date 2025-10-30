@@ -8,6 +8,7 @@ import {
   SidebarGroupLabel,
   SidebarHeader,
 } from "@/components/ui/sidebar";
+import profilePhoto from "@assets/linkin..myb_1761849483072.png";
 
 interface SkillBarProps {
   skill: string;
@@ -56,9 +57,11 @@ export function AppSidebar() {
       <SidebarHeader className="border-b border-sidebar-border pb-8">
         <div className="flex flex-col items-center pt-8">
           <div className="w-36 h-36 rounded-full overflow-hidden border-4 border-primary mb-6">
-            <div className="w-full h-full bg-gradient-to-br from-primary/20 to-primary/40 flex items-center justify-center text-5xl font-bold text-primary">
-              AB
-            </div>
+            <img 
+              src={profilePhoto} 
+              alt="Arijit Bhardwaj" 
+              className="w-full h-full object-cover"
+            />
           </div>
           <h2 className="text-2xl font-bold text-sidebar-foreground mb-2">Arijit Bhardwaj</h2>
           <p className="text-sm text-muted-foreground mb-4">Full Stack Developer</p>

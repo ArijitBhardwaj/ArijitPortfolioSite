@@ -2,6 +2,7 @@ import { MountainBackground } from "@/components/mountain-background";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Briefcase, FolderGit2, Users, GraduationCap } from "lucide-react";
+import heroPhoto from "@assets/image_1761849584907.png";
 
 interface StatCardProps {
   icon: React.ReactNode;
@@ -94,15 +95,17 @@ export default function Home() {
         <div className="absolute inset-0">
           <MountainBackground />
         </div>
-        <div className="relative z-10 h-full flex items-center justify-center">
-          <div className="text-center px-4 max-w-4xl mx-auto py-6">
-            <div className="mb-4">
-              <div className="w-24 h-24 md:w-32 md:h-32 mx-auto rounded-full overflow-hidden border-4 border-primary shadow-2xl flex-shrink-0">
-                <div className="w-full h-full bg-gradient-to-br from-primary/20 to-primary/40 flex items-center justify-center text-3xl md:text-4xl font-bold text-primary">
-                  AB
-                </div>
-              </div>
-            </div>
+        <div className="absolute top-4 right-4 md:top-8 md:right-8 z-20">
+          <div className="w-32 h-32 md:w-48 md:h-48 rounded-lg overflow-hidden border-4 border-primary shadow-2xl">
+            <img 
+              src={heroPhoto} 
+              alt="Arijit Bhardwaj" 
+              className="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+        <div className="relative z-10 h-full flex items-center justify-start pl-8 md:pl-16">
+          <div className="text-left max-w-xl">
             <h1 className="text-2xl md:text-4xl font-bold mb-2 text-white drop-shadow-lg">
               You Know I Got This!
             </h1>

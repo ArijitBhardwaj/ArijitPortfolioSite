@@ -2,6 +2,16 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ExternalLink, Github } from "lucide-react";
+import proactivlyImg from "@assets/stock_images/ai_chatbot_business__c93aff07.jpg";
+import fursightImg from "@assets/stock_images/e-commerce_content_c_446d709f.jpg";
+import arFurnitureImg from "@assets/stock_images/augmented_reality_fu_3f24afa8.jpg";
+import naviGoImg from "@assets/stock_images/indoor_navigation_bu_0b630662.jpg";
+import collaborativeNotesImg from "@assets/stock_images/real-time_collaborat_977f26d5.jpg";
+import vrTrainingImg from "@assets/stock_images/virtual_reality_trai_c6d3e500.jpg";
+import overrunGameImg from "@assets/stock_images/mobile_game_runner_a_3d7874c7.jpg";
+import arBusinessCardImg from "@assets/stock_images/augmented_reality_bu_f3d00550.jpg";
+import postingAppImg from "@assets/stock_images/social_media_app_mob_c31b711c.jpg";
+import wordSaberImg from "@assets/stock_images/vr_game_education_vi_9217b1cb.jpg";
 
 interface ProjectCardProps {
   title: string;
@@ -12,13 +22,23 @@ interface ProjectCardProps {
   image?: string;
 }
 
-function ProjectCard({ title, description, technologies, githubUrl, liveUrl }: ProjectCardProps) {
+function ProjectCard({ title, description, technologies, githubUrl, liveUrl, image }: ProjectCardProps) {
   const titleSlug = title.toLowerCase().replace(/\s+/g, '-');
   return (
     <Card className="overflow-hidden hover-elevate active-elevate-2 transition-all duration-300 flex flex-col h-full group" data-testid={`card-project-${titleSlug}`}>
-      {/* Project Image Placeholder - Larger aspect ratio */}
-      <div className="aspect-[4/3] bg-gradient-to-br from-primary/20 via-primary/10 to-primary/5 flex items-center justify-center border-b border-border transition-all duration-300 group-hover:from-primary/30 group-hover:via-primary/15 group-hover:to-primary/10" data-testid={`img-project-${titleSlug}`}>
-        <div className="text-7xl md:text-8xl font-bold text-primary/40 transition-all duration-300 group-hover:text-primary/60 group-hover:scale-110">{title.charAt(0)}</div>
+      {/* Project Image */}
+      <div className="aspect-[4/3] overflow-hidden border-b border-border" data-testid={`img-project-${titleSlug}`}>
+        {image ? (
+          <img 
+            src={image} 
+            alt={title}
+            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+        ) : (
+          <div className="w-full h-full bg-gradient-to-br from-primary/20 via-primary/10 to-primary/5 flex items-center justify-center transition-all duration-300 group-hover:from-primary/30 group-hover:via-primary/15 group-hover:to-primary/10">
+            <div className="text-7xl md:text-8xl font-bold text-primary/40 transition-all duration-300 group-hover:text-primary/60 group-hover:scale-110">{title.charAt(0)}</div>
+          </div>
+        )}
       </div>
       
       <div className="p-8 flex flex-col flex-grow">
@@ -79,60 +99,70 @@ export default function Portfolio() {
       description: "An AI-powered business chatbot that guides entrepreneurs from raw ideas to structured business models through conversational AI with context-aware memory and analytics dashboard.",
       technologies: ["React", "TypeScript", "Node.js", "Express", "Firebase", "Gemini API"],
       githubUrl: "https://github.com/ArijitBhardwaj",
+      image: proactivlyImg,
     },
     {
       title: "Fursight",
       description: "AI content automation platform for e-commerce merchants that generates SEO-optimized blogs and Pinterest pins from research documents using RAG and semantic search.",
       technologies: ["React", "TypeScript", "Qdrant", "Gemini API", "Shopify", "Pinterest API"],
       githubUrl: "https://github.com/ArijitBhardwaj",
+      image: fursightImg,
     },
     {
       title: "AR Furniture Showcase",
       description: "Augmented reality application for realistic virtual furniture placement with accurate scaling, occlusion, and lighting using ARKit/ARCore integration.",
       technologies: ["Unity", "AR Foundation", "Blender", "C#"],
       githubUrl: "https://github.com/ArijitBhardwaj/TeamXRProject",
+      image: arFurnitureImg,
     },
     {
       title: "NaviGo",
       description: "Real-time indoor navigation web app providing turn-by-turn directions via QR calibration and device sensors with optimized A* pathfinding algorithm.",
       technologies: ["React", "Material-UI", "Node.js", "Firebase", "A* Algorithm"],
       githubUrl: "https://github.com/ArijitBhardwaj",
+      image: naviGoImg,
     },
     {
       title: "Collaborative Notes",
       description: "Multi-platform note-taking app with sub-second real-time collaboration across web and Chrome extension using Socket.IO and role-based access control.",
       technologies: ["React", "Node.js", "Socket.IO", "AWS DynamoDB", "Chrome Extension"],
       githubUrl: "https://github.com/ArijitBhardwaj",
+      image: collaborativeNotesImg,
     },
     {
-      title: "Virtual Reality - Training",
+      title: "Virtual Reality Industrial Training",
       description: "Immersive VR training simulation platform designed to provide hands-on learning experiences in virtual environments with interactive scenarios and real-time feedback.",
       technologies: ["Unity", "C#", "VR SDK", "3D Modeling", "Oculus"],
       githubUrl: "https://github.com/ArijitBhardwaj",
+      image: vrTrainingImg,
     },
     {
       title: "OverRun Android Game",
       description: "Action-packed Android endless runner game featuring dynamic obstacle generation, progressive difficulty scaling, power-ups, and leaderboard integration for competitive gameplay.",
       technologies: ["Java", "Android SDK", "SQLite", "Canvas API", "Game Development"],
       githubUrl: "https://github.com/Travis975/Team-Null-CSTP2205-Android-Programming",
+      image: overrunGameImg,
     },
     {
       title: "AR Business Card",
       description: "Innovative augmented reality business card experience that displays interactive 3D models and portfolio content when scanned, creating memorable networking moments.",
       technologies: ["Unity", "AR Foundation", "Vuforia", "C#", "3D Modeling"],
       githubUrl: "https://github.com/ArijitBhardwaj/AR_Business_Card",
+      image: arBusinessCardImg,
     },
     {
       title: "Posting App",
       description: "Modern social media platform inspired by Threads with real-time posting, following system, personalized feed algorithm, and engaging user interactions.",
       technologies: ["React", "Node.js", "MongoDB", "Socket.IO", "Express", "JWT"],
       githubUrl: "https://github.com/lordbomebob/Posting_App",
+      image: postingAppImg,
     },
     {
       title: "Word Saber VR",
       description: "Immersive VR word-slicing game combining rhythm-based mechanics with language learning, featuring gesture recognition and adaptive difficulty for engaging educational gameplay.",
       technologies: ["Unity", "C#", "VR SDK", "Oculus Integration", "Motion Tracking"],
       githubUrl: "https://github.com/ArijitBhardwaj/TeamXRProject",
+      image: wordSaberImg,
     },
   ];
 
