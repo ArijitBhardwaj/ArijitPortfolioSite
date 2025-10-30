@@ -8,7 +8,20 @@ The portfolio is built as a full-stack application with a React frontend and Exp
 
 ## Recent Changes (October 30, 2025)
 
-**Latest Updates:**
+**Latest Major Enhancements - Portfolio Aesthetics & Content:**
+- ✅ **Added 4 new projects** - Total 10 projects now showcased:
+  * OverRun Android Game (Java, Android SDK, SQLite)
+  * AR Business Card (Unity, AR Foundation, Vuforia)
+  * Posting App - Threads Clone (React, Node.js, MongoDB)
+  * Word Saber VR (Unity, C#, VR SDK, Oculus)
+- ✅ **Resized hero section** - Changed from full-screen to compact 60vh height matching reference proportions
+- ✅ **Enhanced portfolio grid** - 3-column layout on desktop (lg), 2-column on tablet (md), single column on mobile
+- ✅ **Added subtle animations** - Fade-in and stagger effects on all sections following industry best practices
+- ✅ **Improved hover effects** - Project cards with gradient intensification, icon scaling, and smooth transitions
+- ✅ **Optimized avatar sizing** - Desktop: 144px (w-36 h-36), Mobile: 112px (w-28 h-28)
+- ✅ **Professional micro-interactions** - Active elevation effects and smooth transitions throughout
+
+**Previous Updates:**
 - ✅ Changed sidebar from fixed to natural scrolling - scrolls with page content
 - ✅ Replaced "Movie Explorer" with "Virtual Reality - Training" project in portfolio
 - ✅ Updated profile information: Residence "Canada", City "Vancouver, BC", Age "28 years"
