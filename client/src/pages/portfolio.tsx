@@ -15,10 +15,10 @@ interface ProjectCardProps {
 function ProjectCard({ title, description, technologies, githubUrl, liveUrl }: ProjectCardProps) {
   const titleSlug = title.toLowerCase().replace(/\s+/g, '-');
   return (
-    <Card className="overflow-hidden hover-elevate transition-all duration-300 flex flex-col h-full" data-testid={`card-project-${titleSlug}`}>
+    <Card className="overflow-hidden hover-elevate active-elevate-2 transition-all duration-300 flex flex-col h-full group" data-testid={`card-project-${titleSlug}`}>
       {/* Project Image Placeholder */}
-      <div className="aspect-video bg-gradient-to-br from-primary/20 via-primary/10 to-primary/5 flex items-center justify-center border-b border-border" data-testid={`img-project-${titleSlug}`}>
-        <div className="text-6xl font-bold text-primary/40">{title.charAt(0)}</div>
+      <div className="aspect-video bg-gradient-to-br from-primary/20 via-primary/10 to-primary/5 flex items-center justify-center border-b border-border transition-all duration-300 group-hover:from-primary/30 group-hover:via-primary/15 group-hover:to-primary/10" data-testid={`img-project-${titleSlug}`}>
+        <div className="text-6xl font-bold text-primary/40 transition-all duration-300 group-hover:text-primary/60 group-hover:scale-110">{title.charAt(0)}</div>
       </div>
       
       <div className="p-6 flex flex-col flex-grow">
@@ -141,8 +141,8 @@ export default function Portfolio() {
       {/* Header Section */}
       <section className="py-16 px-4 bg-gradient-to-br from-primary/10 via-background to-background">
         <div className="max-w-6xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">Portfolio</h1>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+          <h1 className="text-4xl md:text-5xl font-bold mb-6 animate-fade-in">Portfolio</h1>
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto animate-fade-in-up stagger-1">
             With more than 5+ years of working on different roles like Software Engineer, R&D Engineer, 
             and Web Instructor, it has been a great journey, and I have made a bunch of products which 
             improved my skills over time.
@@ -153,9 +153,11 @@ export default function Portfolio() {
       {/* Projects Grid */}
       <section className="py-16 px-4">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {projects.map((project, index) => (
-              <ProjectCard key={index} {...project} />
+              <div key={index} className={`animate-fade-in-up stagger-${(index % 10) + 1}`}>
+                <ProjectCard {...project} />
+              </div>
             ))}
           </div>
         </div>

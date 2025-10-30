@@ -115,7 +115,9 @@ export default function Home() {
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {stats.map((stat, index) => (
-              <StatCard key={index} {...stat} />
+              <div key={index} className={`animate-fade-in-up stagger-${index + 1}`}>
+                <StatCard {...stat} />
+              </div>
             ))}
           </div>
         </div>
@@ -124,10 +126,12 @@ export default function Home() {
       {/* Skills Section */}
       <section className="py-16 px-4 bg-background">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-semibold mb-12 text-center">My Skill Set</h2>
+          <h2 className="text-3xl md:text-4xl font-semibold mb-12 text-center animate-fade-in">My Skill Set</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {skills.map((skill, index) => (
-              <SkillCard key={index} {...skill} />
+              <div key={index} className={`animate-fade-in-up stagger-${index + 1}`}>
+                <SkillCard {...skill} />
+              </div>
             ))}
           </div>
         </div>
