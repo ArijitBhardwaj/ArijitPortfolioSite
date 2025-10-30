@@ -9,6 +9,7 @@ The portfolio is built as a full-stack application with a React frontend and Exp
 ## Recent Changes (October 30, 2025)
 
 **Latest Updates:**
+- ✅ Changed sidebar from fixed to natural scrolling - scrolls with page content
 - ✅ Replaced "Movie Explorer" with "Virtual Reality - Training" project in portfolio
 - ✅ Updated profile information: Residence "Canada", City "Vancouver, BC", Age "28 years"
 - ✅ Removed internal scrollbars from skills section - natural page scrolling enabled
