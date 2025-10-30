@@ -25,9 +25,9 @@ interface ProjectCardProps {
 function ProjectCard({ title, description, technologies, githubUrl, liveUrl, image }: ProjectCardProps) {
   const titleSlug = title.toLowerCase().replace(/\s+/g, '-');
   return (
-    <Card className="overflow-hidden hover-elevate active-elevate-2 transition-all duration-300 flex flex-col h-full group" data-testid={`card-project-${titleSlug}`}>
+    <Card className="hover-elevate active-elevate-2 transition-all duration-300 flex flex-col h-full group" data-testid={`card-project-${titleSlug}`}>
       {/* Project Image */}
-      <div className="aspect-[4/3] overflow-hidden border-b border-border" data-testid={`img-project-${titleSlug}`}>
+      <div className="aspect-[4/3] overflow-hidden border-b border-border rounded-t-xl" data-testid={`img-project-${titleSlug}`}>
         {image ? (
           <img 
             src={image} 

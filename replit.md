@@ -9,12 +9,11 @@ The portfolio is built as a full-stack application with a React frontend and Exp
 ## Recent Changes (October 30, 2025)
 
 **Latest Image Integration Update:**
-- ✅ **Integrated user profile photos** - Personal photos now displayed throughout portfolio:
+- ✅ **Integrated user profile photo** - Personal photo displayed in sidebar:
   * Sidebar avatar: User-provided profile photo (linkin..myb_1761849483072.png) in circular frame with primary border
-  * Hero section: Outdoor professional photo (image_1761849584907.png) positioned bottom-right, full-body visible
-  * Hero redesigned: Full-height photo (35vh hero, 300px minimum) showing complete body from head to feet without cropping
-  * Text "You Know I Got This!" left-aligned with photo on right side
-- ✅ **Added stock images to all 10 portfolio projects** - Each project card now displays relevant imagery:
+  * Hero section: Centered text-only design with mountain background (no profile photo)
+  * Text "You Know I Got This!" centered in hero section
+- ✅ **Updated stock images to all 10 portfolio projects** - Each project card now displays high-quality, relevant imagery:
   * Proactivly: AI chatbot business planning image
   * Fursight: E-commerce content creation image
   * AR Furniture Showcase: Augmented reality furniture placement image
@@ -26,7 +25,10 @@ The portfolio is built as a full-stack application with a React frontend and Exp
   * Posting App: Social media app mobile interface image
   * Word Saber VR: VR education game learning image
 - ✅ **Updated project title** - "Virtual Reality - Training" renamed to "Virtual Reality Industrial Training"
-- ✅ **Enhanced portfolio card interactions** - Images scale on hover (transform: scale(1.05)) with smooth transitions
+- ✅ **Enhanced portfolio card interactions** - Fixed hover effects by removing overflow-hidden from cards:
+  * Images scale on hover (transform: scale(1.05)) with smooth transitions
+  * Cards have elevation effect on hover using hover-elevate utility class
+  * Rounded corners maintained on image containers
 - ✅ **Compact hero and stats layout** - Matching reference website design:
   * Hero section reduced to 35vh (minimum 300px) for compact presentation
   * Stats section padding reduced from py-8 to py-4 for tighter spacing
