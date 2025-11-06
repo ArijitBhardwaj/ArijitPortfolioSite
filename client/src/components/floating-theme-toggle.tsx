@@ -6,7 +6,7 @@ export function FloatingThemeToggle() {
   const { theme, setTheme } = useTheme();
 
   return (
-    <div className="fixed top-4 right-4 z-[9999] flex items-center gap-2">
+    <div className="fixed top-4 right-4 z-[9999] flex items-center gap-2 bg-card border border-border rounded-full px-4 py-2 shadow-lg">
       <span className="text-xs md:text-sm text-foreground hidden sm:inline">
         Switch Theme
       </span>
@@ -15,7 +15,7 @@ export function FloatingThemeToggle() {
         size="icon"
         onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
         data-testid="button-theme-toggle-floating"
-        className="rounded-full bg-primary text-primary-foreground h-8 w-8 md:h-9 md:w-9 shadow-lg"
+        className="rounded-full bg-primary text-primary-foreground h-8 w-8 md:h-9 md:w-9"
         aria-label="Toggle theme"
       >
         {theme === "dark" ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
