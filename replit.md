@@ -4,6 +4,37 @@
 
 This is a personal portfolio website for Arijit Bhardwaj, a Full Stack Developer specializing in React, TypeScript, Node.js, and XR technologies. The application aims to professionally showcase credentials and enable visitor engagement through a contact form. It features a modern, dark-themed design with golden-yellow accents, inspired by `knowprabhjyot.github.io`, and persistent sidebar navigation. The project is a full-stack application with a React frontend and an Express backend.
 
+## Recent Changes (November 06, 2025)
+
+**Latest Feature Enhancements:**
+- ✅ **Added counting animation to stats** - Numbers now count up from 0 to target value:
+  * Custom useCountUp hook with IntersectionObserver
+  * Triggers when stats cards scroll into view (threshold: 0.1)
+  * 1.5 second smooth animation with easeOutQuad easing
+  * 60fps performance with 16ms interval updates
+  * Animates only once per page load when visible
+- ✅ **Added green online status indicator** - Profile photo now shows active status:
+  * Green dot positioned at bottom-right of sidebar profile photo
+  * Continuous ripple/ping animation effect
+  * Two-layer design: pulsing outer ring (bg-green-400 animate-ping) + solid inner dot (bg-green-500)
+  * Properly layered with border-2 border-sidebar
+- ✅ **Updated skill percentages** - Adjusted proficiency levels in sidebar:
+  * React.js: 95% → 90%
+  * Node.js: 90% → 85%
+  * TypeScript: 90% → 85%
+  * JavaScript: 95% → 90%
+  * HTML: 95% → 90%
+  * CSS: 90% → 85%
+  * Docker (70%), AWS (75%), Python (85%) remain unchanged
+- ✅ **Updated Industry Experience** - Changed from "4+ years" to "2+ years" in stats section
+- ✅ **Updated hobbies on About page** - New personal interests reflecting sports and entertainment:
+  * "Binge Watch animes"
+  * "basketball"
+  * "table tennis"
+  * "badminton"
+  * Removed previous hobbies: Reading, Researching, Travel, Binge Watch
+- ✅ **Verified GitHub links** - Work Samples buttons in Journey section confirmed linking to GitHub profile
+
 ## User Preferences
 
 Preferred communication style: Simple, everyday language.
