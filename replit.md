@@ -2,103 +2,7 @@
 
 ## Overview
 
-This is a personal portfolio website for Arijit Bhardwaj, a Full Stack Developer based in Vancouver, BC, showcasing expertise in React, TypeScript, Node.js, and XR technologies. The application features a modern, professional design inspired by knowprabhjyot.github.io with a dark theme, golden-yellow accents (HSL 45 95% 50%), and persistent sidebar navigation.
-
-The portfolio is built as a full-stack application with a React frontend and Express backend, designed to present professional credentials and enable visitor engagement through a contact form.
-
-## Recent Changes (October 30, 2025)
-
-**Latest Image Integration Update:**
-- ✅ **Integrated user profile photo** - Personal photo displayed in sidebar:
-  * Sidebar avatar: User-provided profile photo (linkin..myb_1761849483072.png) in circular frame with primary border
-  * Hero section: Centered text-only design with mountain background (no profile photo)
-  * Text "You Know I Got This!" centered in hero section
-- ✅ **Updated stock images to all 10 portfolio projects** - Each project card now displays high-quality, relevant imagery:
-  * Proactivly: AI chatbot business planning image
-  * Fursight: E-commerce content creation image
-  * AR Furniture Showcase: Augmented reality furniture placement image
-  * NaviGo: Indoor navigation wayfinding image
-  * Collaborative Notes: Real-time collaboration workspace image
-  * Virtual Reality Industrial Training: VR headset training simulation image
-  * OverRun Android Game: Mobile game runner gameplay image
-  * AR Business Card: AR business card technology image
-  * Posting App: Social media app mobile interface image
-  * Word Saber VR: VR education game learning image
-- ✅ **Updated project title** - "Virtual Reality - Training" renamed to "Virtual Reality Industrial Training"
-- ✅ **Enhanced portfolio card interactions** - Fixed hover effects by removing overflow-hidden from cards:
-  * Images scale on hover (transform: scale(1.05)) with smooth transitions
-  * Cards have elevation effect on hover using hover-elevate utility class
-  * Rounded corners maintained on image containers
-- ✅ **Compact hero and stats layout** - Matching reference website design:
-  * Hero section reduced to 35vh (minimum 300px) for compact presentation
-  * Stats section padding reduced from py-8 to py-4 for tighter spacing
-  * Stat cards made smaller: p-4 padding, 40px icons, text-3xl values, text-xs labels
-  * Overall page shows hero + stats + skills heading in first viewport
-- ✅ **Comprehensive E2E testing passed** - Verified all images display correctly on desktop and mobile
-
-**Previous Complete Redesign - Matching Reference Site (knowprabhjyot.github.io):**
-- ✅ **Further reduced hero section** - Optimized from 60vh to 35vh ensuring efficient space usage
-  * Compact text sizing: heading text-2xl md:text-4xl, subtitle text-sm md:text-base
-- ✅ **Updated stats section** - Reduced to 3 cards with correct values:
-  * Industry Experience: 4+ (updated from 5+)
-  * Completed Projects: 10+ (unchanged)
-  * Companies Worked: 3+ (updated from 8+)
-  * Removed "Years Teaching" stat
-  * Reduced padding to py-8 for compact design matching reference
-- ✅ **Enlarged portfolio cards** - Bigger, more prominent cards matching reference design:
-  * Changed to 2-column grid on desktop (was 3-column)
-  * Larger aspect ratio: 4:3 (was 16:9)
-  * Increased padding: p-8 (was p-6)
-  * Larger fonts: titles text-xl md:text-2xl, descriptions text-base
-  * Bigger spacing: gap-8 md:gap-10 lg:gap-12
-  * Enhanced icon letters: text-7xl md:text-8xl
-- ✅ **About page styling matched to reference**:
-  * Updated hobbies: "Reading", "Researching", "Travel", "Binge Watch"
-  * Hobby badges now rounded buttons with border-2 border-primary
-  * Larger body text: text-base md:text-lg
-  * Content updated to match reference personality
-- ✅ **Added smooth scroll-to-top button** - Bottom-right corner, animated smooth scroll (not instant jump)
-- ✅ **Contact page verified** - Already matches reference with 3 info cards and form
-- ✅ **Added Resume tab and PDF viewer** - Professional resume display with download option
-  * New Resume page at /resume route
-  * Embedded PDF viewer in iframe
-  * Download button with icon
-  * RESUME tab in navigation (5th tab)
-
-**Previous Enhancements:**
-- ✅ **Added 4 new projects** - Total 10 projects now showcased:
-  * OverRun Android Game (Java, Android SDK, SQLite)
-  * AR Business Card (Unity, AR Foundation, Vuforia)
-  * Posting App - Threads Clone (React, Node.js, MongoDB)
-  * Word Saber VR (Unity, C#, VR SDK, Oculus)
-- ✅ **Added subtle animations** - Fade-in and stagger effects on all sections following industry best practices
-- ✅ **Improved hover effects** - Project cards with gradient intensification, icon scaling, and smooth transitions
-
-**Previous Updates:**
-- ✅ Changed sidebar from fixed to natural scrolling - scrolls with page content
-- ✅ Replaced "Movie Explorer" with "Virtual Reality - Training" project in portfolio
-- ✅ Updated profile information: Residence "Canada", City "Vancouver, BC", Age "28 years"
-- ✅ Removed internal scrollbars from skills section - natural page scrolling enabled
-- ✅ All changes tested and verified on desktop and mobile
-
-**Major Redesign Completed** - Matching knowprabhjyot.github.io reference design:
-- ✅ Navigation tabs moved to horizontal header with golden-yellow border styling
-- ✅ Theme toggle relocated to top-right corner of main content area
-- ✅ Sidebar redesigned to contain only profile, skills bars, and social icons
-- ✅ Alternating left-right timeline on About page (desktop), stacked on mobile
-- ✅ Education entry updated to "Graduated 2020"
-- ✅ Portfolio 2-column grid with "Github URL" text links and "Preview" buttons
-- ✅ Fully responsive mobile experience with horizontal scrolling navigation
-- ✅ Comprehensive E2E testing passed for all features and breakpoints
-
-**Design Implementation:**
-- Dark/light theme toggle with golden-yellow accent color (HSL 45 95% 50%)
-- Horizontal navigation tabs at top with golden borders for active state
-- Poppins font for UI, JetBrains Mono for code/tech elements
-- Responsive sidebar (256px desktop, collapsible on mobile)
-- Alternating timeline layout with center line on desktop
-- 2-column portfolio grid on desktop, single column on mobile
-- Clean skills section without internal scrollbars for better UX
+This is a personal portfolio website for Arijit Bhardwaj, a Full Stack Developer specializing in React, TypeScript, Node.js, and XR technologies. The application aims to professionally showcase credentials and enable visitor engagement through a contact form. It features a modern, dark-themed design with golden-yellow accents, inspired by `knowprabhjyot.github.io`, and persistent sidebar navigation. The project is a full-stack application with a React frontend and an Express backend.
 
 ## User Preferences
 
@@ -108,111 +12,58 @@ Preferred communication style: Simple, everyday language.
 
 ### Frontend Architecture
 
-**Framework & Build System**
-- React 18 with TypeScript for type-safe component development
-- Vite as the build tool and development server, providing fast HMR and optimized production builds
-- Wouter for lightweight client-side routing (alternative to React Router)
-
-**UI Component System**
-- shadcn/ui component library (New York style variant) built on Radix UI primitives
-- Tailwind CSS for utility-first styling with custom design tokens
-- Class Variance Authority (CVA) for component variant management
-- Custom theme system supporting dark/light modes with CSS variables
-
-**State Management & Data Fetching**
-- TanStack Query (React Query) for server state management, caching, and API requests
-- React Hook Form with Zod validation for form state and validation
-- Context API for theme management
-
-**Design System**
-- Typography: Poppins for UI text, JetBrains Mono for code/tech tags
-- Responsive breakpoints: Mobile (<768px), Tablet (768-1023px), Desktop (≥1024px)
-- Shadcn sidebar implementation (320px width) with mobile responsiveness via SidebarProvider
-- Consistent spacing using Tailwind's spacing scale
-- Custom color system: Primary golden-yellow (HSL 45 95% 50%) with dark theme default
-- All data-testid attributes follow unique naming convention for E2E testing
+*   **Framework & Build System:** React 18 with TypeScript, using Vite for development and optimized builds. Wouter is used for lightweight client-side routing.
+*   **UI Component System:** `shadcn/ui` (New York style) built on Radix UI primitives, styled with Tailwind CSS and custom design tokens. Class Variance Authority (CVA) manages component variants.
+*   **State Management & Data Fetching:** TanStack Query for server state management and API requests; React Hook Form with Zod for form validation; Context API for theme management.
+*   **Design System:** Poppins font for UI, JetBrains Mono for code. Features responsive design across mobile, tablet, and desktop, a dark theme with a primary golden-yellow accent (HSL 45 95% 50%), and a Shadcn sidebar with mobile responsiveness.
 
 ### Backend Architecture
 
-**Server Framework**
-- Express.js with TypeScript running on Node.js
-- ES modules (type: "module") for modern JavaScript imports
-- Custom middleware for request logging and JSON body parsing
+*   **Server Framework:** Express.js with TypeScript on Node.js, using ES modules. Includes custom middleware for request logging and JSON parsing.
+*   **API Design:** RESTful endpoints under `/api`, including a `POST /api/contact` for form submissions and `GET /api/contact` for retrieval. Zod schemas are shared for validation.
+*   **Data Storage Strategy:** In-memory storage (`MemStorage`) for development contact submissions. Drizzle ORM is configured for PostgreSQL, defining a `contact_submissions` table. An interface pattern allows swapping storage implementations.
+*   **Development & Production Workflow:** Vite middleware for seamless SSR/HMR in development. Separate build processes for frontend (Vite) and backend (esbuild). Static file serving in production.
 
-**API Design**
-- RESTful endpoints under `/api` namespace
-- Contact form submission endpoint (`POST /api/contact`)
-- Contact submission retrieval endpoint (`GET /api/contact`)
-- Validation using Zod schemas shared between frontend and backend
+### System Design Choices
 
-**Data Storage Strategy**
-- In-memory storage (MemStorage class) for contact form submissions in development
-- Drizzle ORM configured for PostgreSQL (production-ready schema defined)
-- Schema defines contact_submissions table with fields: id, firstName, lastName, email, contactNumber, message, createdAt
-- Storage interface pattern allows easy swapping between in-memory and database implementations
+*   **UI/UX:** Dark theme with golden-yellow accents (HSL 45 95% 50%). Horizontal navigation, responsive sidebar, alternating timeline on the About page, and a 2-column portfolio grid on desktop.
+*   **Features:** Contact form, project showcase with detailed cards, "About Me" section, and a Resume tab with a PDF viewer. Subtle animations and improved hover effects for interactivity.
+*   **Responsiveness:** Fully responsive design with careful consideration for element sizing and spacing across devices.
 
-**Development & Production Workflow**
-- Vite middleware integration in development for seamless SSR and HMR
-- Separate build process: Vite for frontend, esbuild for backend
-- Static file serving in production from dist/public
-- Environment-based configuration (NODE_ENV checks)
+## External Dependencies
 
-### External Dependencies
+### UI Component Libraries
 
-**UI Component Libraries**
-- @radix-ui/* packages (v1.x-v2.x): Accordion, Alert Dialog, Avatar, Checkbox, Dialog, Dropdown Menu, Navigation Menu, Popover, Radio Group, Scroll Area, Select, Separator, Sidebar, Slider, Switch, Tabs, Toast, Tooltip
-- embla-carousel-react: Carousel functionality
-- lucide-react: Icon library
-- react-icons: Additional icons (FaGithub, FaLinkedin, FaTwitter, FaInstagram)
-- cmdk: Command palette component
-- vaul: Drawer component
+*   **@radix-ui/\*:** Core UI primitives (Accordion, Dialog, Tooltip, etc.).
+*   **embla-carousel-react:** Carousel functionality.
+*   **lucide-react, react-icons:** Icon libraries.
+*   **cmdk, vaul:** Command palette and drawer components.
 
-**Form Management**
-- react-hook-form: Form state management
-- @hookform/resolvers: Zod resolver integration
-- zod: Schema validation library
-- drizzle-zod: Generate Zod schemas from Drizzle ORM tables
+### Form Management & Validation
 
-**Database & ORM**
-- Drizzle ORM (v0.39.1): TypeScript ORM with PostgreSQL dialect
-- @neondatabase/serverless: Serverless PostgreSQL driver for Neon
-- drizzle-kit: Schema migrations and database management CLI
+*   **react-hook-form:** Form state management.
+*   **@hookform/resolvers, zod:** Zod integration for schema validation.
+*   **drizzle-zod:** Generates Zod schemas from Drizzle ORM.
 
-**Styling & Utilities**
-- tailwindcss: Utility-first CSS framework
-- tailwind-merge: Merge Tailwind classes without conflicts
-- clsx: Conditional class name utility
-- class-variance-authority: Type-safe component variants
-- autoprefixer: CSS vendor prefixing
+### Database & ORM
 
-**Development Tools**
-- @replit/vite-plugin-runtime-error-modal: Runtime error overlay for Replit
-- @replit/vite-plugin-cartographer: Replit integration
-- @replit/vite-plugin-dev-banner: Development environment banner
+*   **Drizzle ORM:** TypeScript ORM for PostgreSQL.
+*   **@neondatabase/serverless:** Serverless PostgreSQL driver.
+*   **drizzle-kit:** Schema migrations and database management.
 
-**Date Handling**
-- date-fns: Date utility library for formatting and manipulation
+### Styling & Utilities
 
-**Session Management (Configured but not actively used)**
-- connect-pg-simple: PostgreSQL session store for Express (available for future authentication)
+*   **tailwindcss:** Utility-first CSS framework.
+*   **tailwind-merge, clsx:** Utilities for managing Tailwind classes.
+*   **class-variance-authority:** Type-safe component variants.
+*   **autoprefixer:** CSS vendor prefixing.
 
-**Build Tools**
-- tsx: TypeScript execution for development server
-- esbuild: Fast JavaScript bundler for production backend
-- vite: Frontend build tool and dev server
+### Development Tools
+
+*   **@replit/vite-plugin-\*:** Replit-specific Vite plugins (runtime error modal, cartographer, dev banner).
+*   **date-fns:** Date utility library.
+*   **tsx, esbuild, vite:** TypeScript execution, backend bundling, and frontend build tools.
 
 ### Database Schema
 
-**PostgreSQL Tables** (via Drizzle ORM)
-- `contact_submissions`: Stores visitor contact form submissions with auto-generated UUID, personal information (first name, last name, email, contact number), message content, and timestamp
-
-**Schema Location**: `shared/schema.ts` - Shared between frontend and backend for type safety and validation consistency
-
-### Configuration Files
-
-- `components.json`: shadcn/ui configuration (New York style, Tailwind paths, component aliases)
-- `tailwind.config.ts`: Custom color system, border radius, spacing extensions
-- `tsconfig.json`: TypeScript configuration with path aliases (@/, @shared/, @assets/)
-- `vite.config.ts`: Vite configuration with React plugin, path resolution, and Replit integrations
-- `drizzle.config.ts`: Database connection and migration settings
-- `postcss.config.js`: Tailwind CSS and Autoprefixer processing
+*   **PostgreSQL Tables:** `contact_submissions` (id, firstName, lastName, email, contactNumber, message, createdAt). Schema defined in `shared/schema.ts` for type safety.

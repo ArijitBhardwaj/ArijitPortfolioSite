@@ -1,7 +1,7 @@
 import { MountainBackground } from "@/components/mountain-background";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Briefcase, FolderGit2, Users, GraduationCap } from "lucide-react";
+import { Briefcase, FolderGit2, Users } from "lucide-react";
 import profilePhoto from "@assets/linkin..myb_1761849483072.png";
 
 interface StatCardProps {
@@ -12,10 +12,10 @@ interface StatCardProps {
 
 function StatCard({ icon, value, label }: StatCardProps) {
   return (
-    <Card className="p-4 text-center hover-elevate transition-all duration-300" data-testid={`card-stat-${label.toLowerCase().replace(/\s+/g, '-')}`}>
-      <div className="flex justify-center mb-2">{icon}</div>
-      <div className="text-3xl font-bold text-primary mb-1" data-testid={`text-stat-value-${label.toLowerCase().replace(/\s+/g, '-')}`}>{value}</div>
-      <div className="text-xs uppercase tracking-wide text-muted-foreground" data-testid={`text-stat-label-${label.toLowerCase().replace(/\s+/g, '-')}`}>{label}</div>
+    <Card className="p-3 text-center hover-elevate transition-all duration-300" data-testid={`card-stat-${label.toLowerCase().replace(/\s+/g, '-')}`}>
+      <div className="flex justify-center mb-1.5">{icon}</div>
+      <div className="text-2xl font-bold text-primary mb-0.5" data-testid={`text-stat-value-${label.toLowerCase().replace(/\s+/g, '-')}`}>{value}</div>
+      <div className="text-[10px] uppercase tracking-wide text-muted-foreground" data-testid={`text-stat-label-${label.toLowerCase().replace(/\s+/g, '-')}`}>{label}</div>
     </Card>
   );
 }
@@ -29,15 +29,15 @@ interface SkillCardProps {
 function SkillCard({ title, description, technologies }: SkillCardProps) {
   const titleSlug = title.toLowerCase().replace(/\s+/g, '-');
   return (
-    <Card className="p-5 hover-elevate transition-all duration-300 flex flex-col h-full" data-testid={`card-skill-${titleSlug}`}>
-      <h3 className="text-lg font-semibold mb-2.5" data-testid={`text-skill-title-${titleSlug}`}>{title}</h3>
-      <p className="text-sm text-muted-foreground mb-3 flex-grow leading-relaxed" data-testid={`text-skill-desc-${titleSlug}`}>{description}</p>
+    <Card className="p-4 hover-elevate transition-all duration-300 flex flex-col h-full" data-testid={`card-skill-${titleSlug}`}>
+      <h3 className="text-base font-semibold mb-2" data-testid={`text-skill-title-${titleSlug}`}>{title}</h3>
+      <p className="text-xs text-muted-foreground mb-2.5 flex-grow leading-relaxed" data-testid={`text-skill-desc-${titleSlug}`}>{description}</p>
       <div className="flex flex-wrap gap-1.5">
         {technologies.map((tech) => (
           <Badge
             key={tech}
             variant="secondary"
-            className="bg-primary text-primary-foreground hover:bg-primary/90 text-xs px-2 py-0.5"
+            className="bg-primary text-primary-foreground text-[10px] px-2 py-0.5"
             data-testid={`badge-skill-${titleSlug}-tech-${tech.toLowerCase().replace(/\s+/g, '-')}`}
           >
             {tech}
@@ -50,10 +50,9 @@ function SkillCard({ title, description, technologies }: SkillCardProps) {
 
 export default function Home() {
   const stats = [
-    { icon: <Briefcase className="w-10 h-10 text-primary" />, value: "4+", label: "Industry Experience" },
-    { icon: <FolderGit2 className="w-10 h-10 text-primary" />, value: "10+", label: "Completed Projects" },
-    { icon: <Users className="w-10 h-10 text-primary" />, value: "3+", label: "Companies Worked" },
-    { icon: <GraduationCap className="w-10 h-10 text-primary" />, value: "1+", label: "Years of Teaching" },
+    { icon: <Briefcase className="w-8 h-8 text-primary" />, value: "4+", label: "Industry Experience" },
+    { icon: <FolderGit2 className="w-8 h-8 text-primary" />, value: "10+", label: "Completed Projects" },
+    { icon: <Users className="w-8 h-8 text-primary" />, value: "3+", label: "Companies Worked" },
   ];
 
   const skills = [
@@ -92,13 +91,13 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative w-full overflow-hidden" style={{ height: '35vh', maxHeight: '35vh', minHeight: '300px' }}>
+      <section className="relative w-full overflow-hidden" style={{ height: '25vh', maxHeight: '25vh', minHeight: '250px' }}>
         <div className="absolute inset-0">
           <MountainBackground />
         </div>
         <div className="relative z-10 h-full max-w-6xl mx-auto flex items-center justify-between px-4">
           <div className="text-left flex-1">
-            <h1 className="text-2xl md:text-4xl font-bold mb-2 text-white drop-shadow-lg">
+            <h1 className="text-xl md:text-3xl font-bold mb-2 text-white drop-shadow-lg">
               You Know I got this!
             </h1>
           </div>
@@ -106,16 +105,16 @@ export default function Home() {
             <img 
               src={profilePhoto} 
               alt="Arijit Bhardwaj" 
-              className="w-48 h-48 lg:w-56 lg:h-56 object-cover rounded-lg shadow-2xl"
+              className="w-40 h-40 lg:w-44 lg:h-44 object-cover rounded-lg shadow-2xl"
             />
           </div>
         </div>
       </section>
 
       {/* Stats Section */}
-      <section className="py-4 px-4 bg-background">
+      <section className="py-3 px-4 bg-background">
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
             {stats.map((stat, index) => (
               <div key={index} className={`animate-fade-in-up stagger-${index + 1}`}>
                 <StatCard {...stat} />
@@ -126,10 +125,10 @@ export default function Home() {
       </section>
 
       {/* Skills Section */}
-      <section className="py-12 px-4 bg-background">
+      <section className="py-6 px-4 bg-background">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-semibold mb-8 text-center animate-fade-in">My Skill Set</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+          <h2 className="text-xl md:text-2xl font-semibold mb-6 text-center animate-fade-in">My Skill Set</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {skills.map((skill, index) => (
               <div key={index} className={`animate-fade-in-up stagger-${index + 1}`}>
                 <SkillCard {...skill} />
