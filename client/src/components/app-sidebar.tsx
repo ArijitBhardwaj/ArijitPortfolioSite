@@ -17,12 +17,12 @@ interface SkillBarProps {
 
 function SkillBar({ skill, percentage }: SkillBarProps) {
   return (
-    <div className="mb-4" data-testid={`skillbar-${skill.toLowerCase().replace(/\s+/g, '-')}`}>
-      <div className="flex justify-between text-sm mb-2">
+    <div className="mb-3" data-testid={`skillbar-${skill.toLowerCase().replace(/\s+/g, '-')}`}>
+      <div className="flex justify-between text-xs mb-1.5">
         <span className="font-medium">{skill}</span>
         <span className="text-muted-foreground">{percentage}%</span>
       </div>
-      <div className="h-2 bg-secondary rounded-full overflow-hidden">
+      <div className="h-1.5 bg-secondary rounded-full overflow-hidden">
         <div
           className="h-full bg-primary transition-all duration-1000 ease-out rounded-full"
           style={{ width: `${percentage}%` }}
@@ -54,28 +54,28 @@ export function AppSidebar() {
 
   return (
     <Sidebar>
-      <SidebarHeader className="border-b border-sidebar-border pb-8">
-        <div className="flex flex-col items-center pt-8">
-          <div className="w-36 h-36 rounded-full overflow-hidden border-4 border-primary mb-6">
+      <SidebarHeader className="border-b border-sidebar-border pb-6">
+        <div className="flex flex-col items-center pt-6">
+          <div className="w-28 h-28 rounded-full overflow-hidden border-3 border-primary mb-4">
             <img 
               src={profilePhoto} 
               alt="Arijit Bhardwaj" 
               className="w-full h-full object-cover"
             />
           </div>
-          <h2 className="text-2xl font-bold text-sidebar-foreground mb-2">Arijit Bhardwaj</h2>
-          <p className="text-sm text-muted-foreground mb-4">Full Stack Developer</p>
-          <div className="w-full px-4 space-y-1 text-sm">
+          <h2 className="text-lg font-bold text-sidebar-foreground mb-1">Arijit Bhardwaj</h2>
+          <p className="text-xs text-muted-foreground mb-3">Full Stack Developer</p>
+          <div className="w-full px-4 space-y-0.5 text-xs">
             <div className="flex justify-between">
-              <span className="text-muted-foreground font-medium">Residence:</span>
+              <span className="text-muted-foreground">Residence:</span>
               <span className="text-sidebar-foreground">Canada</span>
             </div>
             <div className="flex justify-between">
-              <span className="text-muted-foreground font-medium">City:</span>
+              <span className="text-muted-foreground">City:</span>
               <span className="text-sidebar-foreground">Vancouver, BC</span>
             </div>
             <div className="flex justify-between">
-              <span className="text-muted-foreground font-medium">Age:</span>
+              <span className="text-muted-foreground">Age:</span>
               <span className="text-sidebar-foreground">28 years</span>
             </div>
           </div>
@@ -84,7 +84,7 @@ export function AppSidebar() {
       
       <SidebarContent className="!overflow-visible">
         <SidebarGroup>
-          <SidebarGroupLabel className="uppercase tracking-wide text-sm font-bold px-4 mb-4">
+          <SidebarGroupLabel className="uppercase tracking-wide text-xs font-bold px-4 mb-3">
             Skills
           </SidebarGroupLabel>
           <SidebarGroupContent className="px-4">
@@ -95,8 +95,8 @@ export function AppSidebar() {
         </SidebarGroup>
       </SidebarContent>
 
-      <SidebarFooter className="border-t border-sidebar-border pb-6">
-        <div className="flex justify-center gap-6 pt-6">
+      <SidebarFooter className="border-t border-sidebar-border pb-4">
+        <div className="flex justify-center gap-4 pt-4">
           {socialLinks.map((social) => (
             <a
               key={social.label}
@@ -104,10 +104,10 @@ export function AppSidebar() {
               target="_blank"
               rel="noopener noreferrer"
               data-testid={`link-social-${social.label.toLowerCase()}`}
-              className="w-10 h-10 rounded-full bg-secondary hover-elevate active-elevate-2 flex items-center justify-center text-foreground transition-all"
+              className="w-8 h-8 rounded-full bg-secondary hover-elevate active-elevate-2 flex items-center justify-center text-foreground transition-all"
               aria-label={social.label}
             >
-              <social.icon className="w-5 h-5" />
+              <social.icon className="w-4 h-4" />
             </a>
           ))}
         </div>

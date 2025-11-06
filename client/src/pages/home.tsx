@@ -2,6 +2,7 @@ import { MountainBackground } from "@/components/mountain-background";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Briefcase, FolderGit2, Users, GraduationCap } from "lucide-react";
+import profilePhoto from "@assets/linkin..myb_1761849483072.png";
 
 interface StatCardProps {
   icon: React.ReactNode;
@@ -28,15 +29,15 @@ interface SkillCardProps {
 function SkillCard({ title, description, technologies }: SkillCardProps) {
   const titleSlug = title.toLowerCase().replace(/\s+/g, '-');
   return (
-    <Card className="p-6 hover-elevate transition-all duration-300 flex flex-col h-full" data-testid={`card-skill-${titleSlug}`}>
-      <h3 className="text-xl font-semibold mb-3" data-testid={`text-skill-title-${titleSlug}`}>{title}</h3>
-      <p className="text-sm text-muted-foreground mb-4 flex-grow leading-relaxed" data-testid={`text-skill-desc-${titleSlug}`}>{description}</p>
-      <div className="flex flex-wrap gap-2">
+    <Card className="p-5 hover-elevate transition-all duration-300 flex flex-col h-full" data-testid={`card-skill-${titleSlug}`}>
+      <h3 className="text-lg font-semibold mb-2.5" data-testid={`text-skill-title-${titleSlug}`}>{title}</h3>
+      <p className="text-sm text-muted-foreground mb-3 flex-grow leading-relaxed" data-testid={`text-skill-desc-${titleSlug}`}>{description}</p>
+      <div className="flex flex-wrap gap-1.5">
         {technologies.map((tech) => (
           <Badge
             key={tech}
             variant="secondary"
-            className="bg-primary/10 text-primary hover:bg-primary/20 font-mono text-xs"
+            className="bg-primary text-primary-foreground hover:bg-primary/90 text-xs px-2 py-0.5"
             data-testid={`badge-skill-${titleSlug}-tech-${tech.toLowerCase().replace(/\s+/g, '-')}`}
           >
             {tech}
@@ -52,6 +53,7 @@ export default function Home() {
     { icon: <Briefcase className="w-10 h-10 text-primary" />, value: "4+", label: "Industry Experience" },
     { icon: <FolderGit2 className="w-10 h-10 text-primary" />, value: "10+", label: "Completed Projects" },
     { icon: <Users className="w-10 h-10 text-primary" />, value: "3+", label: "Companies Worked" },
+    { icon: <GraduationCap className="w-10 h-10 text-primary" />, value: "1+", label: "Years of Teaching" },
   ];
 
   const skills = [
@@ -94,14 +96,18 @@ export default function Home() {
         <div className="absolute inset-0">
           <MountainBackground />
         </div>
-        <div className="relative z-10 h-full flex items-center justify-center">
-          <div className="text-center max-w-xl px-4">
+        <div className="relative z-10 h-full max-w-6xl mx-auto flex items-center justify-between px-4">
+          <div className="text-left flex-1">
             <h1 className="text-2xl md:text-4xl font-bold mb-2 text-white drop-shadow-lg">
-              You Know I Got This!
+              You Know I got this!
             </h1>
-            <p className="text-sm md:text-base text-white/90 drop-shadow-md">
-              Full Stack Developer | Problem Solver | Innovation Builder
-            </p>
+          </div>
+          <div className="hidden md:flex items-center justify-center">
+            <img 
+              src={profilePhoto} 
+              alt="Arijit Bhardwaj" 
+              className="w-48 h-48 lg:w-56 lg:h-56 object-cover rounded-lg shadow-2xl"
+            />
           </div>
         </div>
       </section>
@@ -109,7 +115,7 @@ export default function Home() {
       {/* Stats Section */}
       <section className="py-4 px-4 bg-background">
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {stats.map((stat, index) => (
               <div key={index} className={`animate-fade-in-up stagger-${index + 1}`}>
                 <StatCard {...stat} />
@@ -120,10 +126,10 @@ export default function Home() {
       </section>
 
       {/* Skills Section */}
-      <section className="py-16 px-4 bg-background">
+      <section className="py-12 px-4 bg-background">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-semibold mb-12 text-center animate-fade-in">My Skill Set</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <h2 className="text-2xl md:text-3xl font-semibold mb-8 text-center animate-fade-in">My Skill Set</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {skills.map((skill, index) => (
               <div key={index} className={`animate-fade-in-up stagger-${index + 1}`}>
                 <SkillCard {...skill} />

@@ -14,6 +14,7 @@ import Contact from "@/pages/contact";
 import Resume from "@/pages/resume";
 import NotFound from "@/pages/not-found";
 import { ScrollToTop } from "@/components/scroll-to-top";
+import { FloatingThemeToggle } from "@/components/floating-theme-toggle";
 
 function Router() {
   return (
@@ -52,6 +53,7 @@ function App() {
               </SidebarInset>
             </div>
           </SidebarProvider>
+          <FloatingThemeToggle />
           <ScrollToTop />
           <Toaster />
         </TooltipProvider>
