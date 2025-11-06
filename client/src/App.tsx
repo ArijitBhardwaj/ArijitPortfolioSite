@@ -17,17 +17,14 @@ import { ScrollToTop } from "@/components/scroll-to-top";
 
 function Router() {
   return (
-    <>
-      <Switch>
-        <Route path="/" component={Home} />
-        <Route path="/about" component={About} />
-        <Route path="/portfolio" component={Portfolio} />
-        <Route path="/contact" component={Contact} />
-        <Route path="/resume" component={Resume} />
-        <Route component={NotFound} />
-      </Switch>
-      <ScrollToTop />
-    </>
+    <Switch>
+      <Route path="/" component={Home} />
+      <Route path="/about" component={About} />
+      <Route path="/portfolio" component={Portfolio} />
+      <Route path="/contact" component={Contact} />
+      <Route path="/resume" component={Resume} />
+      <Route component={NotFound} />
+    </Switch>
   );
 }
 
@@ -55,6 +52,7 @@ function App() {
               </SidebarInset>
             </div>
           </SidebarProvider>
+          <ScrollToTop />
           <Toaster />
         </TooltipProvider>
       </ThemeProvider>
