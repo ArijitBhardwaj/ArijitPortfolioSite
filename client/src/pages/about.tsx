@@ -1,7 +1,7 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ExternalLink, Calendar, MapPin, GraduationCap } from "lucide-react";
+import { ExternalLink, Monitor, GraduationCap } from "lucide-react";
 
 interface TimelineItemProps {
   type: "employment" | "education";
@@ -12,70 +12,69 @@ interface TimelineItemProps {
   description: string;
   bullets: string[];
   githubUrl?: string;
-  isRight?: boolean;
 }
 
-function AlternatingTimelineItem({ type, title, organization, location, period, description, bullets, githubUrl, isRight = false }: TimelineItemProps) {
+function TimelineItem({ type, title, organization, location, period, description, bullets, githubUrl }: TimelineItemProps) {
+  const IconComponent = type === "employment" ? Monitor : GraduationCap;
+  
   return (
-    <div className={`relative flex ${isRight ? 'md:justify-end' : 'md:justify-start'} mb-12`}>
-      {/* Central timeline line and dot - hidden on mobile */}
-      <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 top-0 bottom-0 w-0.5 bg-border" />
-      <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 top-6 w-4 h-4 rounded-full bg-primary border-4 border-background z-10">
-        {type === "education" && <GraduationCap className="absolute -left-6 -top-6 w-8 h-8 text-primary" />}
+    <div className="relative grid md:grid-cols-[1fr_auto_1fr] gap-8 mb-16">
+      {/* Left side - Organization and Period */}
+      <div className="md:text-right">
+        <h3 className="text-xl font-semibold mb-2">{organization}</h3>
+        <p className="text-sm text-muted-foreground mb-1">{period}</p>
+        {location && <p className="text-xs text-muted-foreground">{location}</p>}
       </div>
       
-      {/* Mobile timeline (left side) */}
-      <div className="md:hidden absolute left-0 top-2 bottom-0 w-0.5 bg-border" />
-      <div className="md:hidden absolute left-[-7px] top-6 w-4 h-4 rounded-full bg-primary border-4 border-background" />
+      {/* Center - Timeline with Icon */}
+      <div className="hidden md:flex flex-col items-center">
+        <div className="w-0.5 h-8 bg-border"></div>
+        <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center">
+          <IconComponent className="w-6 h-6 text-primary-foreground" />
+        </div>
+        <div className="w-0.5 flex-1 bg-border"></div>
+      </div>
       
-      {/* Content card */}
-      <div className={`w-full md:w-[calc(50%-2rem)] pl-8 md:pl-0 ${isRight ? 'md:pl-8' : 'md:pr-8'}`}>
-        <Card className="p-6 hover-elevate transition-all duration-300">
-          <div className="flex flex-wrap items-start justify-between gap-2 mb-3">
-            <div>
-              <h3 className="text-xl font-semibold mb-1">{organization}</h3>
-              <p className="text-primary font-medium">{title}</p>
-            </div>
-            <div className="flex flex-col items-end gap-1">
-              <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                <Calendar className="w-4 h-4" />
-                <span>{period}</span>
-              </div>
-              {location && (
-                <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                  <MapPin className="w-4 h-4" />
-                  <span>{location}</span>
-                </div>
-              )}
-            </div>
+      {/* Right side - Title and Details */}
+      <div>
+        <div className="mb-4">
+          <h4 className="text-lg font-semibold text-primary mb-2">{title}</h4>
+          {description && <p className="text-sm text-muted-foreground mb-3 italic">{description}</p>}
+        </div>
+        
+        <ul className="space-y-2 mb-4">
+          {bullets.map((bullet, index) => (
+            <li key={index} className="text-sm flex gap-2">
+              <span className="text-primary mt-1">◦</span>
+              <span className="flex-1">{bullet}</span>
+            </li>
+          ))}
+        </ul>
+        
+        {githubUrl && (
+          <Button
+            variant="outline"
+            size="sm"
+            className="gap-2 border-primary text-primary hover:bg-primary/10"
+            asChild
+            data-testid="button-work-samples"
+          >
+            <a href={githubUrl} target="_blank" rel="noopener noreferrer">
+              WORK SAMPLES
+              <ExternalLink className="w-4 h-4" />
+            </a>
+          </Button>
+        )}
+      </div>
+      
+      {/* Mobile layout - simplified */}
+      <div className="md:hidden absolute left-0 top-0 flex items-start gap-3">
+        <div className="flex flex-col items-center">
+          <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
+            <IconComponent className="w-5 h-5 text-primary-foreground" />
           </div>
-          
-          {description && <p className="text-sm text-muted-foreground mb-4 italic">{description}</p>}
-          
-          <ul className="space-y-2 mb-4">
-            {bullets.map((bullet, index) => (
-              <li key={index} className="text-sm flex gap-2">
-                <span className="text-primary mt-1.5">•</span>
-                <span className="flex-1">{bullet}</span>
-              </li>
-            ))}
-          </ul>
-          
-          {githubUrl && (
-            <Button
-              variant="outline"
-              size="sm"
-              className="gap-2"
-              asChild
-              data-testid="button-work-samples"
-            >
-              <a href={githubUrl} target="_blank" rel="noopener noreferrer">
-                <ExternalLink className="w-4 h-4" />
-                Work Samples
-              </a>
-            </Button>
-          )}
-        </Card>
+          <div className="w-0.5 h-full bg-border mt-2"></div>
+        </div>
       </div>
     </div>
   );
@@ -204,14 +203,14 @@ export default function About() {
         </div>
       </section>
 
-      {/* Journey Section with Alternating Timeline */}
+      {/* Journey Section with Timeline */}
       <section className="py-16 px-4 bg-card/50">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-semibold mb-12 text-center">My Journey</h2>
           
           <div className="relative">
             {timeline.map((item, index) => (
-              <AlternatingTimelineItem key={index} {...item} isRight={index % 2 === 1} />
+              <TimelineItem key={index} {...item} />
             ))}
           </div>
         </div>
