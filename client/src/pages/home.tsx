@@ -1,3 +1,4 @@
+import { useState, useEffect, useRef } from "react";
 import { MountainBackground } from "@/components/mountain-background";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -10,11 +11,65 @@ interface StatCardProps {
   label: string;
 }
 
+function useCountUp(end: number, duration: number = 2000) {
+  const [count, setCount] = useState(0);
+  const [hasStarted, setHasStarted] = useState(false);
+  const elementRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting && !hasStarted) {
+          setHasStarted(true);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (elementRef.current) {
+      observer.observe(elementRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, [hasStarted]);
+
+  useEffect(() => {
+    if (!hasStarted) return;
+
+    const startTime = Date.now();
+    const timer = setInterval(() => {
+      const elapsed = Date.now() - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const easeOutQuad = 1 - Math.pow(1 - progress, 3);
+      setCount(Math.floor(easeOutQuad * end));
+
+      if (progress === 1) {
+        clearInterval(timer);
+        setCount(end);
+      }
+    }, 16);
+
+    return () => clearInterval(timer);
+  }, [hasStarted, end, duration]);
+
+  return { count, elementRef };
+}
+
 function StatCard({ icon, value, label }: StatCardProps) {
+  const numericValue = parseInt(value.replace(/\D/g, ''));
+  const suffix = value.replace(/\d/g, '');
+  const { count, elementRef } = useCountUp(numericValue, 1500);
+
   return (
-    <Card className="p-3 text-center hover-elevate transition-all duration-300" data-testid={`card-stat-${label.toLowerCase().replace(/\s+/g, '-')}`}>
+    <Card 
+      ref={elementRef}
+      className="p-3 text-center hover-elevate transition-all duration-300" 
+      data-testid={`card-stat-${label.toLowerCase().replace(/\s+/g, '-')}`}
+    >
       <div className="flex justify-center mb-1.5">{icon}</div>
-      <div className="text-2xl font-bold text-primary mb-0.5" data-testid={`text-stat-value-${label.toLowerCase().replace(/\s+/g, '-')}`}>{value}</div>
+      <div className="text-2xl font-bold text-primary mb-0.5" data-testid={`text-stat-value-${label.toLowerCase().replace(/\s+/g, '-')}`}>
+        {count}{suffix}
+      </div>
       <div className="text-[10px] uppercase tracking-wide text-muted-foreground" data-testid={`text-stat-label-${label.toLowerCase().replace(/\s+/g, '-')}`}>{label}</div>
     </Card>
   );
@@ -50,7 +105,7 @@ function SkillCard({ title, description, technologies }: SkillCardProps) {
 
 export default function Home() {
   const stats = [
-    { icon: <Briefcase className="w-8 h-8 text-primary" />, value: "4+", label: "Industry Experience" },
+    { icon: <Briefcase className="w-8 h-8 text-primary" />, value: "2+", label: "Industry Experience" },
     { icon: <FolderGit2 className="w-8 h-8 text-primary" />, value: "10+", label: "Completed Projects" },
     { icon: <Users className="w-8 h-8 text-primary" />, value: "3+", label: "Companies Worked" },
   ];

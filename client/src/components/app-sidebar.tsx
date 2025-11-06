@@ -34,13 +34,13 @@ function SkillBar({ skill, percentage }: SkillBarProps) {
 
 export function AppSidebar() {
   const skills = [
-    { name: "React.js", percentage: 95 },
-    { name: "Node.js", percentage: 90 },
-    { name: "TypeScript", percentage: 90 },
-    { name: "JavaScript", percentage: 95 },
+    { name: "React.js", percentage: 90 },
+    { name: "Node.js", percentage: 85 },
+    { name: "TypeScript", percentage: 85 },
+    { name: "JavaScript", percentage: 90 },
     { name: "Python", percentage: 85 },
-    { name: "HTML", percentage: 95 },
-    { name: "CSS", percentage: 90 },
+    { name: "HTML", percentage: 90 },
+    { name: "CSS", percentage: 85 },
     { name: "Docker", percentage: 70 },
     { name: "AWS", percentage: 75 },
   ];
@@ -56,12 +56,20 @@ export function AppSidebar() {
     <Sidebar>
       <SidebarHeader className="border-b border-sidebar-border pb-4">
         <div className="flex flex-col items-center pt-4">
-          <div className="w-24 h-24 rounded-full overflow-hidden border-3 border-primary mb-3">
-            <img 
-              src={profilePhoto} 
-              alt="Arijit Bhardwaj" 
-              className="w-full h-full object-cover"
-            />
+          <div className="w-24 h-24 rounded-full relative mb-3">
+            <div className="w-full h-full rounded-full overflow-hidden border-3 border-primary">
+              <img 
+                src={profilePhoto} 
+                alt="Arijit Bhardwaj" 
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="absolute bottom-1 right-1">
+              <div className="relative">
+                <span className="absolute inline-flex h-4 w-4 rounded-full bg-green-400 opacity-75 animate-ping"></span>
+                <span className="relative inline-flex rounded-full h-4 w-4 bg-green-500 border-2 border-sidebar"></span>
+              </div>
+            </div>
           </div>
           <h2 className="text-base font-bold text-sidebar-foreground mb-0.5">Arijit Bhardwaj</h2>
           <p className="text-[10px] text-muted-foreground mb-2">Full Stack Developer</p>

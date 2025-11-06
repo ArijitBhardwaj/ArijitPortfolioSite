@@ -82,7 +82,7 @@ function AlternatingTimelineItem({ type, title, organization, location, period, 
 }
 
 export default function About() {
-  const hobbies = ["Reading", "Researching", "Travel", "Binge Watch"];
+  const hobbies = ["Binge Watch animes", "basketball", "table tennis", "badminton"];
 
   const timeline: TimelineItemProps[] = [
     {
