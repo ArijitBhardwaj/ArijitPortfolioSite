@@ -66,7 +66,7 @@ function StatCard({ icon, value, label }: StatCardProps) {
       className="p-6 flex flex-col gap-2 items-start hover-elevate transition-all duration-300" 
       data-testid={`card-stat-${label.toLowerCase().replace(/\s+/g, '-')}`}
     >
-      <div className="bg-background rounded-full p-2.5">{icon}</div>
+      <div className="bg-background rounded-full h-12 w-12 flex items-center justify-center">{icon}</div>
       <div className="text-4xl font-bold text-primary" data-testid={`text-stat-value-${label.toLowerCase().replace(/\s+/g, '-')}`}>
         {count}{suffix}
       </div>
