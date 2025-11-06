@@ -218,13 +218,9 @@ export default function Contact() {
 
       {/* Footer */}
       <footer className="py-8 px-4 bg-card border-t border-border">
-        <div className="max-w-6xl mx-auto text-center">
-          <p className="text-sm text-muted-foreground">
-            Made with 💛 by Arijit
-          </p>
-          <p className="text-xs text-muted-foreground mt-2">
-            Email: arijit.bhardwaj@gmail.com
-          </p>
+        <div className="max-w-6xl mx-auto flex justify-between items-center text-sm text-muted-foreground">
+          <p>Made with 💛 by Arijit</p>
+          <p>Email: arijit.bhardwaj@gmail.com</p>
         </div>
       </footer>
     </div>
