@@ -39,11 +39,11 @@ export function ScrollToTop() {
     <Button
       onClick={scrollToTop}
       size="icon"
-      className="fixed bottom-8 right-8 z-50 rounded-md bg-card border-2 border-border text-primary hover:bg-primary/10 hover:border-primary h-12 w-12 transition-all duration-300 no-default-hover-elevate no-default-active-elevate relative overflow-visible"
+      className="fixed bottom-8 right-8 z-50 rounded-md bg-sidebar border-2 border-primary text-primary hover:bg-primary/10 h-14 w-14 transition-all duration-300 shadow-lg no-default-hover-elevate no-default-active-elevate relative overflow-visible"
       data-testid="button-scroll-to-top"
       aria-label="Scroll to top"
     >
-      <ArrowUp className="w-6 h-6" />
+      <ArrowUp className="w-7 h-7" />
       {isClicked && (
         <span className="absolute inset-0 rounded-md border-2 border-primary animate-ping" />
       )}

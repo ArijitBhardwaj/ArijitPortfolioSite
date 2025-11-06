@@ -17,12 +17,12 @@ interface SkillBarProps {
 
 function SkillBar({ skill, percentage }: SkillBarProps) {
   return (
-    <div className="mb-2" data-testid={`skillbar-${skill.toLowerCase().replace(/\s+/g, '-')}`}>
-      <div className="flex justify-between text-[10px] mb-1">
+    <div className="mb-3" data-testid={`skillbar-${skill.toLowerCase().replace(/\s+/g, '-')}`}>
+      <div className="flex justify-between text-[12px] mb-1">
         <span className="font-medium">{skill}</span>
         <span className="text-muted-foreground">{percentage}%</span>
       </div>
-      <div className="h-1 bg-secondary rounded-full overflow-hidden">
+      <div className="h-1.5 bg-[#3b3b44] rounded-full overflow-hidden">
         <div
           className="h-full bg-primary transition-all duration-1000 ease-out rounded-full"
           style={{ width: `${percentage}%` }}
@@ -54,8 +54,8 @@ export function AppSidebar() {
 
   return (
     <Sidebar>
-      <SidebarHeader className="border-b border-sidebar-border pb-4">
-        <div className="flex flex-col items-center pt-4">
+      <SidebarHeader className="border-b border-sidebar-border pb-6 px-6 pt-6">
+        <div className="flex flex-col items-center">
           <div className="w-24 h-24 rounded-full relative mb-3">
             <div className="w-full h-full rounded-full overflow-hidden border-3 border-primary">
               <img 
@@ -71,9 +71,9 @@ export function AppSidebar() {
               </div>
             </div>
           </div>
-          <h2 className="text-base font-bold text-sidebar-foreground mb-0.5">Arijit Bhardwaj</h2>
-          <p className="text-[10px] text-muted-foreground mb-2">Full Stack Developer</p>
-          <div className="w-full px-4 space-y-0 text-[10px]">
+          <h2 className="text-[14px] font-bold text-sidebar-foreground mb-0.5">Arijit Bhardwaj</h2>
+          <p className="text-[12px] text-muted-foreground mb-3">Full Stack Developer</p>
+          <div className="w-full px-2 space-y-1 text-[12px]">
             <div className="flex justify-between">
               <span className="text-muted-foreground">Residence:</span>
               <span className="text-sidebar-foreground">Canada</span>
@@ -90,12 +90,12 @@ export function AppSidebar() {
         </div>
       </SidebarHeader>
       
-      <SidebarContent className="!overflow-visible">
+      <SidebarContent className="!overflow-visible px-6 py-6">
         <SidebarGroup>
-          <SidebarGroupLabel className="uppercase tracking-wide text-[10px] font-bold px-4 mb-2">
+          <SidebarGroupLabel className="uppercase tracking-wide text-[12px] font-bold mb-3">
             Skills
           </SidebarGroupLabel>
-          <SidebarGroupContent className="px-4">
+          <SidebarGroupContent>
             {skills.map((skill) => (
               <SkillBar key={skill.name} skill={skill.name} percentage={skill.percentage} />
             ))}
@@ -103,8 +103,8 @@ export function AppSidebar() {
         </SidebarGroup>
       </SidebarContent>
 
-      <SidebarFooter className="border-t border-sidebar-border pb-3">
-        <div className="flex justify-center gap-3 pt-3">
+      <SidebarFooter className="border-t border-sidebar-border pb-4 px-6">
+        <div className="flex justify-center gap-3 pt-4">
           {socialLinks.map((social) => (
             <a
               key={social.label}
@@ -112,10 +112,10 @@ export function AppSidebar() {
               target="_blank"
               rel="noopener noreferrer"
               data-testid={`link-social-${social.label.toLowerCase()}`}
-              className="w-7 h-7 rounded-full bg-secondary hover-elevate active-elevate-2 flex items-center justify-center text-foreground transition-all"
+              className="w-8 h-8 rounded-full bg-secondary hover-elevate active-elevate-2 flex items-center justify-center text-foreground transition-all"
               aria-label={social.label}
             >
-              <social.icon className="w-3.5 h-3.5" />
+              <social.icon className="w-4 h-4" />
             </a>
           ))}
         </div>

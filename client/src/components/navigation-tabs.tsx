@@ -13,24 +13,22 @@ export function NavigationTabs() {
   ];
 
   return (
-    <div className="flex items-center border-b border-border bg-background px-4 md:px-6 py-3 md:py-4">
-      <nav className="flex gap-1 md:gap-2 overflow-x-auto flex-1">
+    <div className="flex items-center bg-sidebar border-b border-border h-12">
+      <nav className="flex gap-0 overflow-x-auto flex-1">
         {navItems.map((item) => (
           <Link key={item.path} href={item.path}>
-            <Button
-              variant={location === item.path ? "default" : "ghost"}
-              size="sm"
+            <button
               className={`
-                px-3 md:px-6 py-2 text-xs md:text-sm font-medium tracking-wide uppercase whitespace-nowrap
+                h-12 px-6 text-[12px] font-medium tracking-[0.15em] uppercase whitespace-nowrap transition-all
                 ${location === item.path 
-                  ? "bg-transparent border-2 border-primary text-primary hover:bg-primary/10" 
-                  : "text-muted-foreground hover:text-foreground"
+                  ? "bg-transparent border-b-2 border-primary text-primary" 
+                  : "text-muted-foreground hover:text-foreground hover:bg-sidebar-accent"
                 }
               `}
               data-testid={`link-nav-${item.label.toLowerCase()}`}
             >
               {item.label}
-            </Button>
+            </button>
           </Link>
         ))}
       </nav>
