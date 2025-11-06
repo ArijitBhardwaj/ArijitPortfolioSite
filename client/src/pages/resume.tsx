@@ -4,7 +4,7 @@ export default function Resume() {
   return (
     <div className="min-h-screen bg-background">
       {/* Header Section */}
-      <section className="py-12 px-4 bg-gradient-to-br from-primary/10 via-background to-background border-b border-border">
+      <section className="py-12 px-8 bg-gradient-to-br from-primary/10 via-background to-background border-b border-border">
         <div className="max-w-6xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Resume</h1>
           <p className="text-lg text-muted-foreground">
@@ -14,7 +14,7 @@ export default function Resume() {
       </section>
 
       {/* PDF Viewer Section */}
-      <section className="py-8 px-4">
+      <section className="py-8 px-8">
         <div className="max-w-6xl mx-auto">
           <div className="bg-card rounded-lg border border-border overflow-hidden shadow-lg">
             <iframe

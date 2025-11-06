@@ -169,7 +169,7 @@ export default function Portfolio() {
   return (
     <div className="min-h-screen pb-16">
       {/* Header Section */}
-      <section className="py-16 px-4 bg-gradient-to-br from-primary/10 via-background to-background">
+      <section className="py-16 px-8 bg-gradient-to-br from-primary/10 via-background to-background">
         <div className="max-w-6xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-6 animate-fade-in">Portfolio</h1>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto animate-fade-in-up stagger-1">
@@ -181,7 +181,7 @@ export default function Portfolio() {
       </section>
 
       {/* Projects Grid */}
-      <section className="py-16 px-4">
+      <section className="py-16 px-8">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 lg:gap-12">
             {projects.map((project, index) => (
@@ -194,7 +194,7 @@ export default function Portfolio() {
       </section>
 
       {/* Footer */}
-      <footer className="py-8 px-4 bg-card border-t border-border">
+      <footer className="py-8 px-8 bg-card border-t border-border">
         <div className="max-w-6xl mx-auto flex justify-between items-center text-sm text-muted-foreground">
           <p>Made with 💛 by Arijit</p>
           <p>Email: arijit.bhardwaj@gmail.com</p>

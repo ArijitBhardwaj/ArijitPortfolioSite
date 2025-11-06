@@ -71,7 +71,7 @@ export default function Contact() {
   return (
     <div className="min-h-screen pb-16">
       {/* Header Section */}
-      <section className="py-16 px-4 bg-gradient-to-br from-primary/10 via-background to-background">
+      <section className="py-16 px-8 bg-gradient-to-br from-primary/10 via-background to-background">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">Get in Touch</h1>
           <p className="text-lg text-muted-foreground">
@@ -81,7 +81,7 @@ export default function Contact() {
       </section>
 
       {/* Info Cards */}
-      <section className="py-16 px-4">
+      <section className="py-16 px-8">
         <div className="max-w-4xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
             <InfoCard
@@ -217,7 +217,7 @@ export default function Contact() {
       </section>
 
       {/* Footer */}
-      <footer className="py-8 px-4 bg-card border-t border-border">
+      <footer className="py-8 px-8 bg-card border-t border-border">
         <div className="max-w-6xl mx-auto flex justify-between items-center text-sm text-muted-foreground">
           <p>Made with 💛 by Arijit</p>
           <p>Email: arijit.bhardwaj@gmail.com</p>

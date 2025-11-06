@@ -154,7 +154,7 @@ export default function About() {
       {/* Hero Section */}
       <section className="relative h-80 flex items-center justify-center overflow-hidden bg-gradient-to-br from-primary/20 via-background to-primary/10">
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMzLjMxNCAwIDYgMi42ODYgNiA2cy0yLjY4NiA2LTYgNi02LTIuNjg2LTYtNiAyLjY4Ni02IDYtNnoiIHN0cm9rZT0iY3VycmVudENvbG9yIiBzdHJva2Utb3BhY2l0eT0iLjA1Ii8+PC9nPjwvc3ZnPg==')] opacity-40" />
-        <div className="relative z-10 text-center px-4">
+        <div className="relative z-10 text-center px-8">
           <div className="mb-6">
             <div className="w-40 h-40 mx-auto rounded-full overflow-hidden border-4 border-primary shadow-xl">
               <div className="w-full h-full bg-gradient-to-br from-primary/30 to-primary/50 flex items-center justify-center text-5xl font-bold text-primary">
@@ -170,7 +170,7 @@ export default function About() {
       </section>
 
       {/* About Me Section */}
-      <section className="py-16 px-4 bg-background">
+      <section className="py-16 px-8 bg-background">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold mb-3">About Me</h2>
           <p className="text-lg text-muted-foreground mb-8">My Kind of Story</p>
@@ -204,7 +204,7 @@ export default function About() {
       </section>
 
       {/* Journey Section with Timeline */}
-      <section className="py-16 px-4 bg-card/50">
+      <section className="py-16 px-8 bg-card/50">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-semibold mb-12 text-center">My Journey</h2>
           
@@ -217,7 +217,7 @@ export default function About() {
       </section>
 
       {/* Skills Section */}
-      <section className="py-16 px-4">
+      <section className="py-16 px-8">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-semibold mb-6">Skills & Expertise</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
