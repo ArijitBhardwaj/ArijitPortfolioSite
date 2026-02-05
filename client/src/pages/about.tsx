@@ -136,7 +136,7 @@ export default function About() {
       title: "Diploma in Computer Systems Technology",
       organization: "Vancouver Community College",
       location: "Vancouver, BC",
-      period: "Expected Jun 2025",
+      period: "Sep 2023 - Jun 2025",
       description: "Comprehensive full-stack development program",
       bullets: [
         "Focused on modern web technologies, cloud computing, and software engineering best practices",
