@@ -8,7 +8,7 @@ import {
   SidebarGroupLabel,
   SidebarHeader,
 } from "@/components/ui/sidebar";
-import profilePhoto from "@assets/linkin..myb_1761849483072.png";
+import profilePhoto from "@assets/professional_photo_linkedin.jpeg";
 
 interface SkillBarProps {
   skill: string;

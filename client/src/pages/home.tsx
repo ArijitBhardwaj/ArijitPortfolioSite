@@ -3,7 +3,7 @@ import { MountainBackground } from "@/components/mountain-background";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Briefcase, FolderGit2, Users } from "lucide-react";
-import profilePhoto from "@assets/linkin..myb_1761849483072.png";
+import profilePhoto from "@assets/professional_photo_linkedin.jpeg";
 
 interface StatCardProps {
   icon: React.ReactNode;
