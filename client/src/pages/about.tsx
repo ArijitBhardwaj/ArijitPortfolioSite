@@ -14,18 +14,29 @@ interface TimelineItemProps {
   githubUrl?: string;
 }
 
-function TimelineItem({ type, title, organization, location, period, description, bullets, githubUrl }: TimelineItemProps) {
+function TimelineItem({
+  type,
+  title,
+  organization,
+  location,
+  period,
+  description,
+  bullets,
+  githubUrl,
+}: TimelineItemProps) {
   const IconComponent = type === "employment" ? Monitor : GraduationCap;
-  
+
   return (
     <div className="relative grid md:grid-cols-[1fr_auto_1fr] gap-8 mb-16">
       {/* Left side - Organization and Period */}
       <div className="md:text-right">
         <h3 className="text-xl font-semibold mb-2">{organization}</h3>
         <p className="text-sm text-muted-foreground mb-1">{period}</p>
-        {location && <p className="text-xs text-muted-foreground">{location}</p>}
+        {location && (
+          <p className="text-xs text-muted-foreground">{location}</p>
+        )}
       </div>
-      
+
       {/* Center - Timeline with Icon */}
       <div className="hidden md:flex flex-col items-center">
         <div className="w-0.5 h-8 bg-border"></div>
@@ -34,14 +45,18 @@ function TimelineItem({ type, title, organization, location, period, description
         </div>
         <div className="w-0.5 flex-1 bg-border"></div>
       </div>
-      
+
       {/* Right side - Title and Details */}
       <div>
         <div className="mb-4">
           <h4 className="text-lg font-semibold text-primary mb-2">{title}</h4>
-          {description && <p className="text-sm text-muted-foreground mb-3 italic">{description}</p>}
+          {description && (
+            <p className="text-sm text-muted-foreground mb-3 italic">
+              {description}
+            </p>
+          )}
         </div>
-        
+
         <ul className="space-y-2 mb-4">
           {bullets.map((bullet, index) => (
             <li key={index} className="text-sm flex gap-2">
@@ -50,7 +65,7 @@ function TimelineItem({ type, title, organization, location, period, description
             </li>
           ))}
         </ul>
-        
+
         {githubUrl && (
           <Button
             variant="outline"
@@ -66,7 +81,7 @@ function TimelineItem({ type, title, organization, location, period, description
           </Button>
         )}
       </div>
-      
+
       {/* Mobile layout - simplified */}
       <div className="md:hidden absolute left-0 top-0 flex items-start gap-3">
         <div className="flex flex-col items-center">
@@ -81,7 +96,12 @@ function TimelineItem({ type, title, organization, location, period, description
 }
 
 export default function About() {
-  const hobbies = ["Binge Watch animes", "basketball", "table tennis", "badminton"];
+  const hobbies = [
+    "Binge Watch animes",
+    "basketball",
+    "table tennis",
+    "badminton",
+  ];
 
   const timeline: TimelineItemProps[] = [
     {
@@ -140,7 +160,7 @@ export default function About() {
       title: "Bachelor of Technology in Textile Technology",
       organization: "Indian Institute of Technology, Delhi",
       location: "New Delhi, India",
-      period: "Graduated 2020",
+      period: "Graduated 2018",
       description: "Engineering foundation with data structures and algorithms",
       bullets: [
         "Developed strong analytical and problem-solving skills through rigorous engineering curriculum",
@@ -162,9 +182,12 @@ export default function About() {
               </div>
             </div>
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Technology Enthusiast</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">
+            Technology Enthusiast
+          </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Building scalable solutions and pushing the boundaries of what's possible with code
+            Building scalable solutions and pushing the boundaries of what's
+            possible with code
           </p>
         </div>
       </section>
@@ -174,7 +197,7 @@ export default function About() {
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold mb-3">About Me</h2>
           <p className="text-lg text-muted-foreground mb-8">My Kind of Story</p>
-          
+
           <div className="mb-8">
             <h3 className="text-xl font-semibold mb-4">My Hobbies</h3>
             <div className="flex flex-wrap gap-3">
@@ -183,7 +206,7 @@ export default function About() {
                   key={hobby}
                   variant="outline"
                   className="rounded-full border-2 border-primary text-primary hover:bg-primary/10 px-6 py-2"
-                  data-testid={`badge-hobby-${hobby.toLowerCase().replace(/\s+/g, '-')}`}
+                  data-testid={`badge-hobby-${hobby.toLowerCase().replace(/\s+/g, "-")}`}
                 >
                   {hobby}
                 </Button>
@@ -193,11 +216,15 @@ export default function About() {
 
           <div className="space-y-6 text-base md:text-lg leading-relaxed">
             <p>
-              Hello my name is Arijit Bhardwaj and I am a Software Engineer. I love developing full fledged web and mobile applications. 
-              One thing I have improved over time in me, is not giving up, if I want to achieve a milestone, and I don't know how to do it, 
-              I will be honest to myself and I'll dedicate more time to explore and learn. But that's what we do in real life right ? 
-              I may be blunt or straight forward, but I am loyal, if I chose you then I will be there for you for 24 hours, because that's 
-              what I do. Challenges excite me, staying idle frights me!
+              Hello my name is Arijit Bhardwaj and I am a Software Engineer. I
+              love developing full fledged web and mobile applications. One
+              thing I have improved over time in me, is not giving up, if I want
+              to achieve a milestone, and I don't know how to do it, I will be
+              honest to myself and I'll dedicate more time to explore and learn.
+              But that's what we do in real life right ? I may be blunt or
+              straight forward, but I am loyal, if I chose you then I will be
+              there for you for 24 hours, because that's what I do. Challenges
+              excite me, staying idle frights me!
             </p>
           </div>
         </div>
@@ -206,8 +233,10 @@ export default function About() {
       {/* Journey Section with Timeline */}
       <section className="py-16 px-8 bg-card/50">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-semibold mb-12 text-center">My Journey</h2>
-          
+          <h2 className="text-3xl font-semibold mb-12 text-center">
+            My Journey
+          </h2>
+
           <div className="relative">
             {timeline.map((item, index) => (
               <TimelineItem key={index} {...item} />
@@ -224,7 +253,13 @@ export default function About() {
             <Card className="p-6">
               <h3 className="text-xl font-semibold mb-4">Frontend</h3>
               <div className="flex flex-wrap gap-2">
-                {["React", "TypeScript", "Next.js", "Tailwind CSS", "Three.js"].map((skill) => (
+                {[
+                  "React",
+                  "TypeScript",
+                  "Next.js",
+                  "Tailwind CSS",
+                  "Three.js",
+                ].map((skill) => (
                   <Badge
                     key={skill}
                     variant="secondary"
@@ -235,11 +270,17 @@ export default function About() {
                 ))}
               </div>
             </Card>
-            
+
             <Card className="p-6">
               <h3 className="text-xl font-semibold mb-4">Backend</h3>
               <div className="flex flex-wrap gap-2">
-                {["Node.js", "Express", "Firebase", "PostgreSQL", "REST APIs"].map((skill) => (
+                {[
+                  "Node.js",
+                  "Express",
+                  "Firebase",
+                  "PostgreSQL",
+                  "REST APIs",
+                ].map((skill) => (
                   <Badge
                     key={skill}
                     variant="secondary"
@@ -254,15 +295,17 @@ export default function About() {
             <Card className="p-6">
               <h3 className="text-xl font-semibold mb-4">DevOps & Tools</h3>
               <div className="flex flex-wrap gap-2">
-                {["Docker", "AWS", "GitHub Actions", "Git", "Linux"].map((skill) => (
-                  <Badge
-                    key={skill}
-                    variant="secondary"
-                    className="bg-primary/10 text-primary"
-                  >
-                    {skill}
-                  </Badge>
-                ))}
+                {["Docker", "AWS", "GitHub Actions", "Git", "Linux"].map(
+                  (skill) => (
+                    <Badge
+                      key={skill}
+                      variant="secondary"
+                      className="bg-primary/10 text-primary"
+                    >
+                      {skill}
+                    </Badge>
+                  ),
+                )}
               </div>
             </Card>
 
