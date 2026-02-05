@@ -132,18 +132,6 @@ export default function About() {
       githubUrl: "https://github.com/ArijitBhardwaj",
     },
     {
-      type: "employment",
-      title: "Head of Operations",
-      organization: "Travvir",
-      location: "Noida, India (Hybrid)",
-      period: "Sep 2019 - Jun 2023",
-      description: "Leading operations and digital marketing initiatives",
-      bullets: [
-        "Improved customer retention by 15% via feedback loops and targeted personalization",
-        "Managed Google Ads end-to-end; increased conversions by 20% while reducing CPA",
-      ],
-    },
-    {
       type: "education",
       title: "Diploma in Computer Systems Technology",
       organization: "Vancouver Community College",
@@ -153,6 +141,18 @@ export default function About() {
       bullets: [
         "Focused on modern web technologies, cloud computing, and software engineering best practices",
         "Built multiple real-world projects including AR applications, indoor navigation systems, and collaborative platforms",
+      ],
+    },
+    {
+      type: "employment",
+      title: "Head of Operations",
+      organization: "Travvir",
+      location: "Noida, India (Hybrid)",
+      period: "Sep 2019 - Jun 2023",
+      description: "Leading operations and digital marketing initiatives",
+      bullets: [
+        "Improved customer retention by 15% via feedback loops and targeted personalization",
+        "Managed Google Ads end-to-end; increased conversions by 20% while reducing CPA",
       ],
     },
     {
