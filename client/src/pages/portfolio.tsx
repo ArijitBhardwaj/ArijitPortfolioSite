@@ -173,7 +173,7 @@ export default function Portfolio() {
         <div className="max-w-6xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-6 animate-fade-in">Portfolio</h1>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto animate-fade-in-up stagger-1">
-            From engineering roots at IIT Delhi to co-founding an AI SaaS startup — software development has been my greatest pivot yet. These 10+ projects span full-stack web apps, augmented and virtual reality experiences, AI-powered platforms, and mobile games. Every build sharpened a new edge. Every challenge was worth showing up for.
+            From engineering roots at IIT Delhi to co-founding an AI SaaS startup, software development has been my greatest pivot yet. These 10+ projects span full-stack web apps, augmented and virtual reality experiences, AI-powered platforms, and mobile games. Every build sharpened a new edge. Every challenge was worth showing up for.
           </p>
         </div>
       </section>
