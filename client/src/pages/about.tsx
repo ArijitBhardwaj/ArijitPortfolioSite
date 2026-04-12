@@ -27,68 +27,108 @@ function TimelineItem({
   const IconComponent = type === "employment" ? Monitor : GraduationCap;
 
   return (
-    <div className="relative grid md:grid-cols-[1fr_auto_1fr] gap-8 mb-16">
-      {/* Left side - Organization and Period */}
-      <div className="md:text-right">
-        <h3 className="text-xl font-semibold mb-2">{organization}</h3>
-        <p className="text-sm text-muted-foreground mb-1">{period}</p>
-        {location && (
-          <p className="text-xs text-muted-foreground">{location}</p>
-        )}
-      </div>
-
-      {/* Center - Timeline with Icon */}
-      <div className="hidden md:flex flex-col items-center">
-        <div className="w-0.5 h-8 bg-border"></div>
-        <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center">
-          <IconComponent className="w-6 h-6 text-primary-foreground" />
+    <div className="relative mb-12 md:mb-16">
+      {/* ── Desktop Layout (md and above) ── */}
+      <div className="hidden md:grid md:grid-cols-[1fr_auto_1fr] gap-8">
+        {/* Left: Organization and Period */}
+        <div className="text-right">
+          <h3 className="text-xl font-semibold mb-2">{organization}</h3>
+          <p className="text-sm text-muted-foreground mb-1">{period}</p>
+          {location && (
+            <p className="text-xs text-muted-foreground">{location}</p>
+          )}
         </div>
-        <div className="w-0.5 flex-1 bg-border"></div>
+
+        {/* Center: Timeline with Icon */}
+        <div className="flex flex-col items-center">
+          <div className="w-0.5 h-8 bg-border"></div>
+          <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center">
+            <IconComponent className="w-6 h-6 text-primary-foreground" />
+          </div>
+          <div className="w-0.5 flex-1 bg-border"></div>
+        </div>
+
+        {/* Right: Title and Details */}
+        <div>
+          <div className="mb-4">
+            <h4 className="text-lg font-semibold text-primary mb-2">{title}</h4>
+            {description && (
+              <p className="text-sm text-muted-foreground mb-3 italic">
+                {description}
+              </p>
+            )}
+          </div>
+          <ul className="space-y-2 mb-4">
+            {bullets.map((bullet, index) => (
+              <li key={index} className="text-sm flex gap-2">
+                <span className="text-primary mt-1">◦</span>
+                <span className="flex-1">{bullet}</span>
+              </li>
+            ))}
+          </ul>
+          {githubUrl && (
+            <Button
+              variant="outline"
+              size="sm"
+              className="gap-2 border-primary text-primary hover:bg-primary/10"
+              asChild
+              data-testid="button-work-samples"
+            >
+              <a href={githubUrl} target="_blank" rel="noopener noreferrer">
+                WORK SAMPLES
+                <ExternalLink className="w-4 h-4" />
+              </a>
+            </Button>
+          )}
+        </div>
       </div>
 
-      {/* Right side - Title and Details */}
-      <div>
-        <div className="mb-4">
-          <h4 className="text-lg font-semibold text-primary mb-2">{title}</h4>
+      {/* ── Mobile Layout (below md) ── */}
+      <div className="md:hidden">
+        {/* Header row: icon beside org name */}
+        <div className="flex items-start gap-3 mb-3">
+          <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center flex-shrink-0 mt-0.5">
+            <IconComponent className="w-5 h-5 text-primary-foreground" />
+          </div>
+          <div>
+            <h3 className="text-lg font-semibold leading-tight">{organization}</h3>
+            <p className="text-sm text-muted-foreground mt-0.5">{period}</p>
+            {location && (
+              <p className="text-xs text-muted-foreground">{location}</p>
+            )}
+          </div>
+        </div>
+
+        {/* Content: indented with left border line */}
+        <div className="ml-5 pl-5 border-l-2 border-border">
+          <h4 className="text-base font-semibold text-primary mb-2">{title}</h4>
           {description && (
             <p className="text-sm text-muted-foreground mb-3 italic">
               {description}
             </p>
           )}
-        </div>
-
-        <ul className="space-y-2 mb-4">
-          {bullets.map((bullet, index) => (
-            <li key={index} className="text-sm flex gap-2">
-              <span className="text-primary mt-1">◦</span>
-              <span className="flex-1">{bullet}</span>
-            </li>
-          ))}
-        </ul>
-
-        {githubUrl && (
-          <Button
-            variant="outline"
-            size="sm"
-            className="gap-2 border-primary text-primary hover:bg-primary/10"
-            asChild
-            data-testid="button-work-samples"
-          >
-            <a href={githubUrl} target="_blank" rel="noopener noreferrer">
-              WORK SAMPLES
-              <ExternalLink className="w-4 h-4" />
-            </a>
-          </Button>
-        )}
-      </div>
-
-      {/* Mobile layout - simplified */}
-      <div className="md:hidden absolute left-0 top-0 flex items-start gap-3">
-        <div className="flex flex-col items-center">
-          <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
-            <IconComponent className="w-5 h-5 text-primary-foreground" />
-          </div>
-          <div className="w-0.5 h-full bg-border mt-2"></div>
+          <ul className="space-y-2 mb-4">
+            {bullets.map((bullet, index) => (
+              <li key={index} className="text-sm flex gap-2">
+                <span className="text-primary mt-1">◦</span>
+                <span className="flex-1">{bullet}</span>
+              </li>
+            ))}
+          </ul>
+          {githubUrl && (
+            <Button
+              variant="outline"
+              size="sm"
+              className="gap-2 border-primary text-primary hover:bg-primary/10"
+              asChild
+              data-testid="button-work-samples"
+            >
+              <a href={githubUrl} target="_blank" rel="noopener noreferrer">
+                WORK SAMPLES
+                <ExternalLink className="w-4 h-4" />
+              </a>
+            </Button>
+          )}
         </div>
       </div>
     </div>
@@ -116,7 +156,7 @@ export default function About() {
         "Implemented Stripe subscriptions with tiered access, coupons, invoicing; CI/CD via GitHub Actions",
         "Led roadmap alignment, UX design, and technical documentation",
       ],
-      githubUrl: "https://github.com/ArijitBhardwaj",
+      githubUrl: "https://github.com/jiexu-1/proactivly",
     },
     {
       type: "employment",
@@ -129,7 +169,7 @@ export default function About() {
         "Improved SEO and performance; integrated Shopify stores and analytics",
         "Built in-house automation tools for product/blog sync and Pinterest/Shopify workflows",
       ],
-      githubUrl: "https://github.com/ArijitBhardwaj",
+      githubUrl: "https://github.com/ArijitBhardwaj/MoriCat-KCAT",
     },
     {
       type: "education",

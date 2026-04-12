@@ -150,17 +150,17 @@ export default function Home() {
         <div className="absolute inset-0">
           <MountainBackground />
         </div>
-        <div className="relative z-10 h-full max-w-6xl mx-auto flex items-center justify-between px-8">
-          <div className="text-left flex-1">
-            <h1 className="text-4xl font-bold mb-2 text-white drop-shadow-lg max-w-sm">
+        <div className="relative z-10 min-h-[220px] max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-center md:justify-between px-8 py-6 md:py-0 gap-4 md:gap-0">
+          <div className="text-center md:text-left flex-1 order-2 md:order-1">
+            <h1 className="text-4xl font-bold mb-2 text-white drop-shadow-lg">
               You Know I got this!
             </h1>
           </div>
-          <div className="hidden md:flex items-center justify-center">
-            <img 
-              src={profilePhoto} 
-              alt="Arijit Bhardwaj" 
-              className="w-48 h-48 object-cover rounded-full border-4 border-sidebar shadow-2xl"
+          <div className="flex items-center justify-center order-1 md:order-2">
+            <img
+              src={profilePhoto}
+              alt="Arijit Bhardwaj"
+              className="w-28 h-28 md:w-48 md:h-48 object-cover rounded-full border-4 border-sidebar shadow-2xl"
             />
           </div>
         </div>
